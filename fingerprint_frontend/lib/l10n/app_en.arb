@@ -1,0 +1,1378 @@
+{
+  "@@locale": "en",
+  "appTitle": "ProPlus Attendance Management System",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "fingerprintSystem": "Fingerprint Management System",
+  "@fingerprintSystem": {
+    "description": "Login page title - Fingerprint Management System"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login button"
+  },
+  "loginFailed": "Login failed",
+  "@loginFailed": {
+    "description": "Error message when login fails"
+  },
+  "loginToContinue": "Please login to continue",
+  "@loginToContinue": {
+    "description": "Welcome text on login screen"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button"
+  },
+  "confirmLogoutMessage": "Are you sure you want to logout?",
+  "@confirmLogoutMessage": {
+    "description": "Confirm logout message"
+  },
+  "username": "Username",
+  "@username": {
+    "description": "Username field"
+  },
+  "usernameRequired": "Username is required",
+  "@usernameRequired": {
+    "description": "Username required error message"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password field"
+  },
+  "passwordRequired": "Password is required",
+  "@passwordRequired": {
+    "description": "Password required error message"
+  },
+  "passwordMinLength": "Password must be at least 6 characters",
+  "@passwordMinLength": {
+    "description": "Password minimum length error message"
+  },
+  "passwordMismatch": "Passwords do not match",
+  "@passwordMismatch": {
+    "description": "Password mismatch error message"
+  },
+  "invalidCredentials": "Invalid credentials or account is not active",
+  "@invalidCredentials": {
+    "description": "Invalid credentials error message"
+  },
+  "currentPassword": "Current Password",
+  "@currentPassword": {
+    "description": "Current password field"
+  },
+  "newPassword": "New Password",
+  "@newPassword": {
+    "description": "New password field"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Confirm password field"
+  },
+  "changePassword": "Change Password",
+  "@changePassword": {
+    "description": "Change password button"
+  },
+  "changePasswordFor": "Change password for user: {username}",
+  "@changePasswordFor": {
+    "description": "Change password dialog title for a specific user",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings page title"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language option"
+  },
+  "appearance": "Appearance",
+  "@appearance": {
+    "description": "Appearance option"
+  },
+  "appearanceDesc": "Customize the application interface colors",
+  "@appearanceDesc": {
+    "description": "Appearance option description"
+  },
+  "lightTheme": "Light",
+  "@lightTheme": {
+    "description": "Light theme"
+  },
+  "darkTheme": "Dark",
+  "@darkTheme": {
+    "description": "Dark theme"
+  },
+  "systemTheme": "System",
+  "@systemTheme": {
+    "description": "System theme"
+  },
+  "dashboard": "Dashboard",
+  "@dashboard": {
+    "description": "Dashboard title"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home navigation link"
+  },
+  "employees": "Employees",
+  "@employees": {
+    "description": "Employees list"
+  },
+  "attendance": "Attendance",
+  "@attendance": {
+    "description": "Attendance"
+  },
+  "attendanceManagementSystem": "Attendance Management System",
+  "@attendanceManagementSystem": {
+    "description": "Drawer header title"
+  },
+  "reports": "Reports",
+  "@reports": {
+    "description": "Reports title"
+  },
+  "system": "System",
+  "@system": {
+    "description": "System"
+  },
+  "usersManagement": "Users Management",
+  "@usersManagement": {
+    "description": "Users management page title"
+  },
+  "addUser": "Add User",
+  "@addUser": {
+    "description": "Add new user button"
+  },
+  "editUser": "Edit User",
+  "@editUser": {
+    "description": "Edit user dialog title"
+  },
+  "deleteUser": "Delete User",
+  "@deleteUser": {
+    "description": "Delete user button"
+  },
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Notifications option"
+  },
+  "notificationsDesc": "Alert and notification settings",
+  "@notificationsDesc": {
+    "description": "Notifications option description"
+  },
+  "about": "About",
+  "@about": {
+    "description": "About option"
+  },
+  "aboutDesc": "ProPlus Attendance Management System v1.0.0",
+  "@aboutDesc": {
+    "description": "App description"
+  },
+  "activate": "Activate",
+  "@activate": {
+    "description": "Activate user text"
+  },
+  "deactivate": "Deactivate",
+  "@deactivate": {
+    "description": "Deactivate user text"
+  },
+  "role": "Role",
+  "@role": {
+    "description": "Role field"
+  },
+  "roleAdmin": "Admin",
+  "@roleAdmin": {
+    "description": "Admin role"
+  },
+  "roleHR": "HR",
+  "@roleHR": {
+    "description": "HR role"
+  },
+  "roleViewer": "Viewer",
+  "@roleViewer": {
+    "description": "Viewer role"
+  },
+  "users": "Users",
+  "@users": {
+    "description": "Users list"
+  },
+  "noUsers": "No users found",
+  "@noUsers": {
+    "description": "No users message"
+  },
+  "confirmDelete": "Confirm Delete",
+  "@confirmDelete": {
+    "description": "Confirm delete dialog title"
+  },
+  "confirmDeleteMessage": "Are you sure you want to delete the user",
+  "@confirmDeleteMessage": {
+    "description": "Confirm delete user message"
+  },
+  "confirmDeleteUser": "Are you sure you want to delete user \"{username}\"?",
+  "@confirmDeleteUser": {
+    "description": "Confirm delete specific user",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "passwordChanged": "Password changed successfully",
+  "@passwordChanged": {
+    "description": "Password changed success message"
+  },
+  "userCreated": "User created successfully",
+  "@userCreated": {
+    "description": "User created success message"
+  },
+  "userUpdated": "User updated successfully",
+  "@userUpdated": {
+    "description": "User updated success message"
+  },
+  "userDeleted": "User deleted successfully",
+  "@userDeleted": {
+    "description": "User deleted success message"
+  },
+  "statusUpdated": "Status updated successfully",
+  "@statusUpdated": {
+    "description": "Status updated success message"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save button"
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Confirm button"
+  },
+  "addNew": "Add",
+  "@addNew": {
+    "description": "Add button"
+  },
+  "update": "Update",
+  "@update": {
+    "description": "Update button"
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete button"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Close button"
+  },
+  "reload": "Reload",
+  "@reload": {
+    "description": "Reload button"
+  },
+  "status": "Status",
+  "@status": {
+    "description": "Status field"
+  },
+  "actions": "Actions",
+  "@actions": {
+    "description": "Actions table header"
+  },
+  "active": "Active",
+  "@active": {
+    "description": "Active status"
+  },
+  "inactive": "Inactive",
+  "@inactive": {
+    "description": "Inactive status"
+  },
+  "enabled": "Enabled",
+  "@enabled": {
+    "description": "Enabled text"
+  },
+  "disabled": "Disabled",
+  "@disabled": {
+    "description": "Disabled text"
+  },
+  "cannotDisableCurrentUser": "Cannot disable current user",
+  "@cannotDisableCurrentUser": {
+    "description": "Cannot disable current user tooltip"
+  },
+  "cannotEditCurrentUser": "Cannot edit current user",
+  "@cannotEditCurrentUser": {
+    "description": "Cannot edit current user tooltip"
+  },
+  "cannotDeleteCurrentUser": "Cannot delete current user",
+  "@cannotDeleteCurrentUser": {
+    "description": "Cannot delete current user tooltip"
+  },
+  "editUserDataPermissions": "Edit user data and permissions",
+  "@editUserDataPermissions": {
+    "description": "Edit user dialog subtitle"
+  },
+  "addUserDataPrompt": "Enter user data to add to the system",
+  "@addUserDataPrompt": {
+    "description": "Add user dialog subtitle"
+  },
+  "fullName": "Full Name",
+  "@fullName": {
+    "description": "Full name field"
+  },
+  "employeeId": "Employee ID",
+  "@employeeId": {
+    "description": "Employee ID field"
+  },
+  "employeeUserId": "Employee ID (UserId)",
+  "@employeeUserId": {
+    "description": "Employee UserId field"
+  },
+  "employeeUserIdHint": "Enter employee ID",
+  "@employeeUserIdHint": {
+    "description": "Employee ID hint"
+  },
+  "generateUniqueId": "Generate Unique ID",
+  "@generateUniqueId": {
+    "description": "Generate unique ID button"
+  },
+  "nameRequired": "Name is required",
+  "@nameRequired": {
+    "description": "Name required error"
+  },
+  "department": "Department",
+  "@department": {
+    "description": "Department field"
+  },
+  "position": "Position",
+  "@position": {
+    "description": "Position field"
+  },
+  "phone": "Phone",
+  "@phone": {
+    "description": "Phone field"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email field"
+  },
+  "hireDate": "Hire Date",
+  "@hireDate": {
+    "description": "Hire date field"
+  },
+  "address": "Address",
+  "@address": {
+    "description": "Address field"
+  },
+  "fingerPrint": "Fingerprint",
+  "@fingerPrint": {
+    "description": "Fingerprint field"
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Search button"
+  },
+  "searchByNameOrCode": "Search by name, ID or card...",
+  "@searchByNameOrCode": {
+    "description": "Search field hint"
+  },
+  "all": "All",
+  "@all": {
+    "description": "All option"
+  },
+  "group": "Group",
+  "@group": {
+    "description": "Group field"
+  },
+  "importCSV": "Import CSV",
+  "@importCSV": {
+    "description": "Import CSV button"
+  },
+  "addNewEmployee": "Add New Employee",
+  "@addNewEmployee": {
+    "description": "Add new employee button"
+  },
+  "code": "Code",
+  "@code": {
+    "description": "Code field"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Name field"
+  },
+  "card": "Card",
+  "@card": {
+    "description": "Card field"
+  },
+  "cardNo": "Card Number (CardNo)",
+  "@cardNo": {
+    "description": "Card number field"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile button"
+  },
+  "manageFingerprints": "Manage Fingerprints",
+  "@manageFingerprints": {
+    "description": "Manage fingerprints button"
+  },
+  "manageFingerprintsFor": "Manage Fingerprints - {name}",
+  "@manageFingerprintsFor": {
+    "description": "Manage fingerprints for employee",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "employeeImportResult": "Added {created} and updated {updated}",
+  "@employeeImportResult": {
+    "description": "Employee import result",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "employeeImportResultWithErrors": "Added {created} and updated {updated} ({errors} errors)",
+  "@employeeImportResultWithErrors": {
+    "description": "Employee import result with errors",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "errors": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteEmployee": "Are you sure you want to delete {name}?",
+  "@confirmDeleteEmployee": {
+    "description": "Confirm delete employee",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "noRecordsFound": "No records found",
+  "@noRecordsFound": {
+    "description": "No records found message"
+  },
+  "noEmployees": "No employees found",
+  "@noEmployees": {
+    "description": "No employees message"
+  },
+  "withoutShift": "Without Shift",
+  "@withoutShift": {
+    "description": "Without shift option"
+  },
+  "statsSummary": "Statistics Summary",
+  "@statsSummary": {
+    "description": "Statistics summary title"
+  },
+  "workHours": "Work Hours",
+  "@workHours": {
+    "description": "Work hours title"
+  },
+  "lateTime": "Late Time",
+  "@lateTime": {
+    "description": "Late time title"
+  },
+  "overtime": "Overtime",
+  "@overtime": {
+    "description": "Overtime title"
+  },
+  "fingerprints": "Fingerprints",
+  "@fingerprints": {
+    "description": "Fingerprints title"
+  },
+  "fingerprintNumber": "Finger Number",
+  "@fingerprintNumber": {
+    "description": "Finger number field"
+  },
+  "biometricTextHint": "Enter biometric fingerprint text...",
+  "@biometricTextHint": {
+    "description": "Biometric text hint"
+  },
+  "searchByFingerprint": "Search by fingerprint...",
+  "@searchByFingerprint": {
+    "description": "Search by fingerprint hint"
+  },
+  "confirmDeleteFingerprint": "Are you sure you want to delete this fingerprint?",
+  "@confirmDeleteFingerprint": {
+    "description": "Confirm delete fingerprint"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button"
+  },
+  "overview": "Attendance System Overview",
+  "@overview": {
+    "description": "Overview text"
+  },
+  "activeEmployees": "{count} Active",
+  "@activeEmployees": {
+    "description": "Active employee count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shifts": "Shifts",
+  "@shifts": {
+    "description": "Shifts title"
+  },
+  "devices": "Devices",
+  "@devices": {
+    "description": "Devices title"
+  },
+  "mostAbsent": "Most Absent",
+  "@mostAbsent": {
+    "description": "Most absent title"
+  },
+  "hoursAbbreviation": "{hours}h",
+  "@hoursAbbreviation": {
+    "description": "Hours abbreviation",
+    "placeholders": {
+      "hours": {
+        "type": "double"
+      }
+    }
+  },
+  "mostPresent": "Most Present",
+  "@mostPresent": {
+    "description": "Most present title"
+  },
+  "mostLate": "Most Late",
+  "@mostLate": {
+    "description": "Most late title"
+  },
+  "timesCount": "{count} times",
+  "@timesCount": {
+    "description": "Times count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noData": "No Data",
+  "@noData": {
+    "description": "No data message"
+  },
+  "recentActivities": "Recent Activities",
+  "@recentActivities": {
+    "description": "Recent activities title"
+  },
+  "noActivitiesToday": "No activities today",
+  "@noActivitiesToday": {
+    "description": "No activities message"
+  },
+  "unknownFingerprint": "Unknown Fingerprint",
+  "@unknownFingerprint": {
+    "description": "Unknown fingerprint text"
+  },
+  "unlinked": "Unlinked",
+  "@unlinked": {
+    "description": "Unlinked text"
+  },
+  "todaySummary": "Today's Summary",
+  "@todaySummary": {
+    "description": "Today summary title"
+  },
+  "present": "Present",
+  "@present": {
+    "description": "Present status"
+  },
+  "absent": "Absent",
+  "@absent": {
+    "description": "Absent status"
+  },
+  "lateStatus": "Late",
+  "@lateStatus": {
+    "description": "Late status"
+  },
+  "rawFingerprints": "Raw Fingerprints",
+  "@rawFingerprints": {
+    "description": "Raw fingerprints tab"
+  },
+  "clearDateFilter": "Clear Date Filter",
+  "@clearDateFilter": {
+    "description": "Clear date filter tooltip"
+  },
+  "allEmployees": "All Employees",
+  "@allEmployees": {
+    "description": "All employees option"
+  },
+  "unknownOnly": "Unknown Only",
+  "@unknownOnly": {
+    "description": "Unknown only option"
+  },
+  "addManualAttendance": "Add Manual Attendance",
+  "@addManualAttendance": {
+    "description": "Add manual attendance button"
+  },
+  "noRawFingerprints": "No Raw Fingerprints",
+  "@noRawFingerprints": {
+    "description": "No raw fingerprints message"
+  },
+  "employee": "Employee",
+  "@employee": {
+    "description": "Employee field"
+  },
+  "dateTime": "Date Time",
+  "@dateTime": {
+    "description": "Date time field"
+  },
+  "device": "Device",
+  "@device": {
+    "description": "Device field"
+  },
+  "action": "Action",
+  "@action": {
+    "description": "Action field"
+  },
+  "unknownWithId": "Unknown (ID: {id})",
+  "@unknownWithId": {
+    "description": "Unknown employee with ID",
+    "placeholders": {
+      "id": {
+        "type": "int"
+      }
+    }
+  },
+  "linkToEmployee": "Link to Employee",
+  "@linkToEmployee": {
+    "description": "Link to employee button"
+  },
+  "addManualFingerprint": "Add Manual Fingerprint",
+  "@addManualFingerprint": {
+    "description": "Add manual fingerprint title"
+  },
+  "selectEmployeeData": "Select Employee Data",
+  "@selectEmployeeData": {
+    "description": "Select employee data hint"
+  },
+  "employeeNameIdFormat": "{name} (ID: {id})",
+  "@employeeNameIdFormat": {
+    "description": "Employee name with ID format",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "errorFetchingEmployees": "Error fetching employees",
+  "@errorFetchingEmployees": {
+    "description": "Error fetching employees"
+  },
+  "fingerprintTime": "Fingerprint Time",
+  "@fingerprintTime": {
+    "description": "Fingerprint time field"
+  },
+  "linkFingerprintToEmployee": "Link Fingerprint to Employee",
+  "@linkFingerprintToEmployee": {
+    "description": "Link fingerprint to employee title"
+  },
+  "selectEmployee": "Select Employee",
+  "@selectEmployee": {
+    "description": "Select employee hint"
+  },
+  "link": "Link",
+  "@link": {
+    "description": "Link button"
+  },
+  "fromDate": "From Date",
+  "@fromDate": {
+    "description": "From date field"
+  },
+  "toDate": "To Date",
+  "@toDate": {
+    "description": "To date field"
+  },
+  "refresh": "Refresh",
+  "@refresh": {
+    "description": "Refresh button"
+  },
+  "excel": "Excel",
+  "@excel": {
+    "description": "Excel button"
+  },
+  "pdf": "PDF",
+  "@pdf": {
+    "description": "PDF button"
+  },
+  "reportExported": "Report exported successfully",
+  "@reportExported": {
+    "description": "Report exported success message"
+  },
+  "tableNo": "No.",
+  "@tableNo": {
+    "description": "Table No header"
+  },
+  "employeeName": "Employee Name",
+  "@employeeName": {
+    "description": "Employee name table header"
+  },
+  "shiftLabel": "Shift",
+  "@shiftLabel": {
+    "description": "Shift table header"
+  },
+  "dateLabel": "Date",
+  "@dateLabel": {
+    "description": "Date field"
+  },
+  "firstFingerprint": "First Fingerprint",
+  "@firstFingerprint": {
+    "description": "First fingerprint table header"
+  },
+  "lastFingerprint": "Last Fingerprint",
+  "@lastFingerprint": {
+    "description": "Last fingerprint table header"
+  },
+  "totalHours": "Total Hours",
+  "@totalHours": {
+    "description": "Total hours table header"
+  },
+  "fingerprintCount": "Fingerprint Count",
+  "@fingerprintCount": {
+    "description": "Fingerprint count table header"
+  },
+  "totalAttendanceDays": "Total Attendance Days: {count}",
+  "@totalAttendanceDays": {
+    "description": "Total attendance days",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalHoursSummary": "Total Hours: {hours}",
+  "@totalHoursSummary": {
+    "description": "Total hours summary",
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "dash": "---",
+  "@dash": {
+    "description": "Dash for empty values"
+  },
+  "rawFingerprintRecords": "Raw Fingerprint Records",
+  "@rawFingerprintRecords": {
+    "description": "Raw fingerprint records title"
+  },
+  "employeeData": "Employee Data",
+  "@employeeData": {
+    "description": "Employee data title"
+  },
+  "employeeCode": "Employee Code",
+  "@employeeCode": {
+    "description": "Employee code field"
+  },
+  "attendanceStatus": "Attendance Status",
+  "@attendanceStatus": {
+    "description": "Attendance status field"
+  },
+  "shiftData": "Shift Data",
+  "@shiftData": {
+    "description": "Shift data title"
+  },
+  "attendanceTime": "Attendance Time",
+  "@attendanceTime": {
+    "description": "Attendance time field"
+  },
+  "departureTime": "Departure Time",
+  "@departureTime": {
+    "description": "Departure time field"
+  },
+  "errorLoadingRecords": "Failed to load records: {error}",
+  "@errorLoadingRecords": {
+    "description": "Error loading records",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noRecordsForEmployee": "No fingerprint records for this employee on this date",
+  "@noRecordsForEmployee": {
+    "description": "No records message"
+  },
+  "attendanceReport": "Attendance Report",
+  "@attendanceReport": {
+    "description": "Attendance report title"
+  },
+  "exportExcel": "Export Excel",
+  "@exportExcel": {
+    "description": "Export Excel button"
+  },
+  "exportPdf": "Export PDF",
+  "@exportPdf": {
+    "description": "Export PDF button"
+  },
+  "selectReportType": "Select report type and press search",
+  "@selectReportType": {
+    "description": "Select report type message"
+  },
+  "currencyFormat": "{amount} SAR",
+  "@currencyFormat": {
+    "description": "Currency format",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "addDevice": "Add Device",
+  "@addDevice": {
+    "description": "Add device button"
+  },
+  "deviceName": "Device Name",
+  "@deviceName": {
+    "description": "Device name field"
+  },
+  "ipAddress": "IP Address",
+  "@ipAddress": {
+    "description": "IP address field"
+  },
+  "port": "Port",
+  "@port": {
+    "description": "Port field"
+  },
+  "deviceType": "Device Type",
+  "@deviceType": {
+    "description": "Device type field"
+  },
+  "noDevices": "No Devices",
+  "@noDevices": {
+    "description": "No devices message"
+  },
+  "connected": "Connected",
+  "@connected": {
+    "description": "Connected status"
+  },
+  "disconnected": "Disconnected",
+  "@disconnected": {
+    "description": "Disconnected status"
+  },
+  "lastSync": "Last Sync",
+  "@lastSync": {
+    "description": "Last sync field"
+  },
+  "notSynced": "Not Synced",
+  "@notSynced": {
+    "description": "Not synced text"
+  },
+  "syncData": "Sync Data",
+  "@syncData": {
+    "description": "Sync data button"
+  },
+  "deviceId": "Device ID",
+  "@deviceId": {
+    "description": "Device ID field"
+  },
+  "lastRequestDate": "Last Request Date",
+  "@lastRequestDate": {
+    "description": "Last request date field"
+  },
+  "noRequestMade": "No request made",
+  "@noRequestMade": {
+    "description": "No request made text"
+  },
+  "firmwareVersion": "Firmware Version",
+  "@firmwareVersion": {
+    "description": "Firmware version field"
+  },
+  "notAvailable": "N/A",
+  "@notAvailable": {
+    "description": "Not available text"
+  },
+  "serialNumber": "Serial Number",
+  "@serialNumber": {
+    "description": "Serial number field"
+  },
+  "fetchProperties": "Fetch Properties",
+  "@fetchProperties": {
+    "description": "Fetch properties button"
+  },
+  "deviceNameRequired": "Device name is required",
+  "@deviceNameRequired": {
+    "description": "Device name required error"
+  },
+  "confirmDeleteDevice": "Are you sure you want to delete device \"{name}\"?",
+  "@confirmDeleteDevice": {
+    "description": "Confirm delete device",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deviceManagement": "Fingerprint Device Management",
+  "@deviceManagement": {
+    "description": "Device management title"
+  },
+  "deviceConnectedSuccess": "Device connected successfully",
+  "@deviceConnectedSuccess": {
+    "description": "Device connected success"
+  },
+  "manageDevice": "Manage Device",
+  "@manageDevice": {
+    "description": "Manage device text"
+  },
+  "propertiesTab": "Properties & Attributes",
+  "@propertiesTab": {
+    "description": "Properties tab"
+  },
+  "employeesTab": "Employees",
+  "@employeesTab": {
+    "description": "Employees tab"
+  },
+  "fingerprintsTab": "Fingerprints",
+  "@fingerprintsTab": {
+    "description": "Fingerprints tab"
+  },
+  "attendanceTab": "Attendance",
+  "@attendanceTab": {
+    "description": "Attendance tab"
+  },
+  "liveCaptureTab": "Live Capture",
+  "@liveCaptureTab": {
+    "description": "Live capture tab"
+  },
+  "employeeDetails": "Employee Details: {name}",
+  "@employeeDetails": {
+    "description": "Employee details title",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "internalId": "Internal ID",
+  "@internalId": {
+    "description": "Internal ID field"
+  },
+  "cardNumber": "Card Number",
+  "@cardNumber": {
+    "description": "Card number field"
+  },
+  "privilege": "Privilege",
+  "@privilege": {
+    "description": "Privilege field"
+  },
+  "privilegeManager": "Manager",
+  "@privilegeManager": {
+    "description": "Manager privilege"
+  },
+  "privilegeSupervisor": "General Supervisor",
+  "@privilegeSupervisor": {
+    "description": "General supervisor privilege"
+  },
+  "privilegeEnroller": "Enroller",
+  "@privilegeEnroller": {
+    "description": "Enroller privilege"
+  },
+  "privilegeEmployee": "Employee",
+  "@privilegeEmployee": {
+    "description": "Employee privilege"
+  },
+  "knownEmployees": "Known Employees",
+  "@knownEmployees": {
+    "description": "Known employees title"
+  },
+  "addEmployee": "Add Employee",
+  "@addEmployee": {
+    "description": "Add employee button"
+  },
+  "sync": "Sync",
+  "@sync": {
+    "description": "Sync button"
+  },
+  "download": "Download",
+  "@download": {
+    "description": "Download button"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading text"
+  },
+  "noTemplates": "No Fingerprints Registered",
+  "@noTemplates": {
+    "description": "No templates message"
+  },
+  "valid": "Valid",
+  "@valid": {
+    "description": "Valid text"
+  },
+  "invalid": "Invalid",
+  "@invalid": {
+    "description": "Invalid text"
+  },
+  "size": "Size",
+  "@size": {
+    "description": "Size field"
+  },
+  "flag": "Flag",
+  "@flag": {
+    "description": "Flag field"
+  },
+  "stateLabel": "State",
+  "@stateLabel": {
+    "description": "State table header"
+  },
+  "typeLabel": "Type",
+  "@typeLabel": {
+    "description": "Type table header"
+  },
+  "dateTimeLabel": "Date & Time",
+  "@dateTimeLabel": {
+    "description": "Date time table header"
+  },
+  "employeeCodeLabel": "Employee Code",
+  "@employeeCodeLabel": {
+    "description": "Employee code table header"
+  },
+  "stop": "Stop",
+  "@stop": {
+    "description": "Stop button"
+  },
+  "startListening": "Start Listening",
+  "@startListening": {
+    "description": "Start listening button"
+  },
+  "waitingForFingerprints": "Waiting for fingerprints...",
+  "@waitingForFingerprints": {
+    "description": "Waiting for fingerprints text"
+  },
+  "deviceActivityReport": "Device Fingerprint Density Report",
+  "@deviceActivityReport": {
+    "description": "Device activity report title"
+  },
+  "comingSoon": "Coming Soon",
+  "@comingSoon": {
+    "description": "Coming soon text"
+  },
+  "featureUnderDevelopment": "This feature is under development and will be available soon",
+  "@featureUnderDevelopment": {
+    "description": "Feature under development description"
+  },
+  "shiftManagement": "Shift Management",
+  "@shiftManagement": {
+    "description": "Shift management title"
+  },
+  "addShift": "Add Shift",
+  "@addShift": {
+    "description": "Add shift button"
+  },
+  "shiftName": "Shift Name",
+  "@shiftName": {
+    "description": "Shift name field"
+  },
+  "shiftNameRequired": "Shift name is required",
+  "@shiftNameRequired": {
+    "description": "Shift name required error"
+  },
+  "startTime": "Start Time",
+  "@startTime": {
+    "description": "Start time field"
+  },
+  "endTime": "End Time",
+  "@endTime": {
+    "description": "End time field"
+  },
+  "nightShift": "Night",
+  "@nightShift": {
+    "description": "Night shift option"
+  },
+  "overtimeShift": "Overtime",
+  "@overtimeShift": {
+    "description": "Overtime option"
+  },
+  "holiday": "Holiday",
+  "@holiday": {
+    "description": "Holiday option"
+  },
+  "noShifts": "No Shifts",
+  "@noShifts": {
+    "description": "No shifts message"
+  },
+  "editShift": "Edit Shift",
+  "@editShift": {
+    "description": "Edit shift title"
+  },
+  "addNewShift": "Add New Shift",
+  "@addNewShift": {
+    "description": "Add new shift title"
+  },
+  "editShiftData": "Edit shift data",
+  "@editShiftData": {
+    "description": "Edit shift description"
+  },
+  "addShiftData": "Enter shift data to add",
+  "@addShiftData": {
+    "description": "Add shift description"
+  },
+  "earlyEntryBefore": "Early Entry (Before)",
+  "@earlyEntryBefore": {
+    "description": "Early entry before field"
+  },
+  "lateEntryAfter": "Late Entry (After)",
+  "@lateEntryAfter": {
+    "description": "Late entry after field"
+  },
+  "earlyExitBefore": "Early Exit (Before)",
+  "@earlyExitBefore": {
+    "description": "Early exit before field"
+  },
+  "lateExitAfter": "Late Exit (After)",
+  "@lateExitAfter": {
+    "description": "Late exit after field"
+  },
+  "maxAttendanceTime": "Max Attendance Time",
+  "@maxAttendanceTime": {
+    "description": "Max attendance time field"
+  },
+  "saving": "Saving...",
+  "@saving": {
+    "description": "Saving text"
+  },
+  "confirmDeleteShift": "Are you sure you want to delete shift \"{name}\"?",
+  "@confirmDeleteShift": {
+    "description": "Confirm delete shift",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "systemDashboard": "System Dashboard",
+  "@systemDashboard": {
+    "description": "System dashboard title"
+  },
+  "systemSettingsDescription": "Manage system settings and constants",
+  "@systemSettingsDescription": {
+    "description": "System settings description"
+  },
+  "shiftManagementCardDesc": "Manage shift times, grace periods, and work days",
+  "@shiftManagementCardDesc": {
+    "description": "Shift management card description"
+  },
+  "deviceManagementCardDesc": "Manage fingerprint devices, status, and sync",
+  "@deviceManagementCardDesc": {
+    "description": "Device management card description"
+  },
+  "newLabel": "New",
+  "@newLabel": {
+    "description": "New label"
+  },
+  "existingLabel": "Existing",
+  "@existingLabel": {
+    "description": "Existing label"
+  },
+  "selectedCountFormat": "Selected: {selected} of {total}",
+  "@selectedCountFormat": {
+    "description": "Selected count format",
+    "placeholders": {
+      "selected": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "editBeforeSync": "Edit employee data before sync",
+  "@editBeforeSync": {
+    "description": "Edit before sync title"
+  },
+  "syncCompleteWithErrors": "Sync complete: {created} added, {updated} updated, {skipped} skipped, {failed} failed",
+  "@syncCompleteWithErrors": {
+    "description": "Sync result with errors",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      },
+      "failed": {
+        "type": "int"
+      }
+    }
+  },
+  "syncCompleteSuccess": "Sync completed successfully: {created} added, {updated} updated, {skipped} skipped",
+  "@syncCompleteSuccess": {
+    "description": "Sync success result",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "stateEntry": "Entry",
+  "@stateEntry": {
+    "description": "Entry state"
+  },
+  "stateExit": "Exit",
+  "@stateExit": {
+    "description": "Exit state"
+  },
+  "stateBreakStart": "Break Start",
+  "@stateBreakStart": {
+    "description": "Break start state"
+  },
+  "stateBreakEnd": "Break End",
+  "@stateBreakEnd": {
+    "description": "Break end state"
+  },
+  "stateOvertimeIn": "Overtime In",
+  "@stateOvertimeIn": {
+    "description": "Overtime in state"
+  },
+  "stateOvertimeOut": "Overtime Out",
+  "@stateOvertimeOut": {
+    "description": "Overtime out state"
+  },
+  "typeFingerprint": "Fingerprint",
+  "@typeFingerprint": {
+    "description": "Fingerprint type"
+  },
+  "typePassword": "Password",
+  "@typePassword": {
+    "description": "Password type"
+  },
+  "typeCard": "Card",
+  "@typeCard": {
+    "description": "Card type"
+  },
+  "typeFingerprintPassword": "Fingerprint+Password",
+  "@typeFingerprintPassword": {
+    "description": "Fingerprint and password type"
+  },
+  "syncAttendanceRecords": "Sync Attendance Records",
+  "@syncAttendanceRecords": {
+    "description": "Sync attendance records title"
+  },
+  "recordsInDevice": "Records in device: {count}",
+  "@recordsInDevice": {
+    "description": "Records in device count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inDatabase": "In Database",
+  "@inDatabase": {
+    "description": "In database text"
+  },
+  "notFoundInDb": "--- (Not Found)",
+  "@notFoundInDb": {
+    "description": "Not found in database"
+  },
+  "noEmployee": "No Employee",
+  "@noEmployee": {
+    "description": "No employee text"
+  },
+  "syncResultSummary": "Selected: {selectedCount} new, {noEmployeeCount} without employee",
+  "@syncResultSummary": {
+    "description": "Sync result summary",
+    "placeholders": {
+      "selectedCount": {
+        "type": "int"
+      },
+      "noEmployeeCount": {
+        "type": "int"
+      }
+    }
+  },
+  "syncing": "Syncing...",
+  "@syncing": {
+    "description": "Syncing text"
+  },
+  "syncAttendanceBtn": "Sync Attendance Data",
+  "@syncAttendanceBtn": {
+    "description": "Sync attendance button"
+  },
+  "recordsWithoutEmployeeWarning": "Records without employee (ID not found in database) will not be synced",
+  "@recordsWithoutEmployeeWarning": {
+    "description": "Warning about records without employee"
+  },
+  "syncAttendanceResult": "Sync result: {created} added, {skipped} skipped, {failed} failed",
+  "@syncAttendanceResult": {
+    "description": "Sync attendance result with errors",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      },
+      "failed": {
+        "type": "int"
+      }
+    }
+  },
+  "syncAttendanceResultSuccess": "Sync completed: {created} new records, {skipped} skipped",
+  "@syncAttendanceResultSuccess": {
+    "description": "Sync attendance success result",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "proPlusAttendance": "Pro-Plus Attendance",
+  "@proPlusAttendance": {
+    "description": "App name in English"
+  },
+  "splashInitializing": "Initializing application...",
+  "@splashInitializing": {
+    "description": "Initializing application status"
+  },
+  "splashStartingPostgres": "Starting database...",
+  "@splashStartingPostgres": {
+    "description": "Starting database status"
+  },
+  "splashStartingBackend": "Starting server...",
+  "@splashStartingBackend": {
+    "description": "Starting server status"
+  },
+  "splashReady": "Application ready",
+  "@splashReady": {
+    "description": "Application ready for use"
+  },
+  "splashError": "An error occurred during initialization",
+  "@splashError": {
+    "description": "Error message on splash screen"
+  },
+  "splashRetry": "Retry",
+  "@splashRetry": {
+    "description": "Retry button"
+  }
+}

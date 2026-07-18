@@ -1,0 +1,1378 @@
+{
+  "@@locale": "ar",
+  "appTitle": "نظام برو-بلس لإدارة الحضور",
+  "@appTitle": {
+    "description": "عنوان التطبيق"
+  },
+  "fingerprintSystem": "نظام إدارة البصمات",
+  "@fingerprintSystem": {
+    "description": "عنوان شاشة الدخول - نظام إدارة البصمات"
+  },
+  "login": "تسجيل الدخول",
+  "@login": {
+    "description": "زر تسجيل الدخول"
+  },
+  "loginFailed": "فشل تسجيل الدخول",
+  "@loginFailed": {
+    "description": "رسالة خطأ عند فشل تسجيل الدخول"
+  },
+  "loginToContinue": "قم بتسجيل الدخول للمتابعة",
+  "@loginToContinue": {
+    "description": "نص ترحيبي في شاشة الدخول"
+  },
+  "logout": "تسجيل الخروج",
+  "@logout": {
+    "description": "زر تسجيل الخروج"
+  },
+  "confirmLogoutMessage": "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
+  "@confirmLogoutMessage": {
+    "description": "رسالة تأكيد تسجيل الخروج"
+  },
+  "username": "اسم المستخدم",
+  "@username": {
+    "description": "حقل اسم المستخدم"
+  },
+  "usernameRequired": "يرجى إدخال اسم المستخدم",
+  "@usernameRequired": {
+    "description": "رسالة خطأ حقل اسم المستخدم مطلوب"
+  },
+  "password": "كلمة المرور",
+  "@password": {
+    "description": "حقل كلمة المرور"
+  },
+  "passwordRequired": "يرجى إدخال كلمة المرور",
+  "@passwordRequired": {
+    "description": "رسالة خطأ حقل كلمة المرور مطلوب"
+  },
+  "passwordMinLength": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+  "@passwordMinLength": {
+    "description": "رسالة خطأ طول كلمة المرور"
+  },
+  "passwordMismatch": "كلمة المرور غير متطابقة",
+  "@passwordMismatch": {
+    "description": "رسالة خطأ عدم تطابق كلمة المرور"
+  },
+  "invalidCredentials": "بيانات الدخول غير صحيحة أو الحساب غير نشط",
+  "@invalidCredentials": {
+    "description": "رسالة خطأ بيانات الدخول غير صحيحة"
+  },
+  "currentPassword": "كلمة المرور الحالية",
+  "@currentPassword": {
+    "description": "حقل كلمة المرور الحالية"
+  },
+  "newPassword": "كلمة المرور الجديدة",
+  "@newPassword": {
+    "description": "حقل كلمة المرور الجديدة"
+  },
+  "confirmPassword": "تأكيد كلمة المرور",
+  "@confirmPassword": {
+    "description": "حقل تأكيد كلمة المرور"
+  },
+  "changePassword": "تغيير كلمة المرور",
+  "@changePassword": {
+    "description": "زر تغيير كلمة المرور"
+  },
+  "changePasswordFor": "تغيير كلمة المرور للمستخدم: {username}",
+  "@changePasswordFor": {
+    "description": "عنوان نافذة تغيير كلمة المرور لمستخدم معين",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "settings": "الإعدادات",
+  "@settings": {
+    "description": "عنوان صفحة الإعدادات"
+  },
+  "language": "اللغة",
+  "@language": {
+    "description": "خيار اللغة"
+  },
+  "appearance": "المظهر",
+  "@appearance": {
+    "description": "خيار المظهر"
+  },
+  "appearanceDesc": "تخصيص ألوان واجهة التطبيق",
+  "@appearanceDesc": {
+    "description": "وصف خيار المظهر"
+  },
+  "lightTheme": "فاتح",
+  "@lightTheme": {
+    "description": "المظهر الفاتح"
+  },
+  "darkTheme": "داكن",
+  "@darkTheme": {
+    "description": "المظهر الداكن"
+  },
+  "systemTheme": "نظام",
+  "@systemTheme": {
+    "description": "المظهر حسب النظام"
+  },
+  "dashboard": "لوحة التحكم",
+  "@dashboard": {
+    "description": "عنوان لوحة التحكم"
+  },
+  "home": "الرئيسية",
+  "@home": {
+    "description": "رابط الصفحة الرئيسية"
+  },
+  "employees": "الموظفين",
+  "@employees": {
+    "description": "قائمة الموظفين"
+  },
+  "attendance": "الحضور والانصراف",
+  "@attendance": {
+    "description": "الحضور والانصراف"
+  },
+  "attendanceManagementSystem": "نظام إدارة الحضور",
+  "@attendanceManagementSystem": {
+    "description": "عنوان شريط القائمة"
+  },
+  "reports": "التقارير",
+  "@reports": {
+    "description": "عنوان التقارير"
+  },
+  "system": "النظام",
+  "@system": {
+    "description": "النظام"
+  },
+  "usersManagement": "إدارة المستخدمين",
+  "@usersManagement": {
+    "description": "عنوان صفحة إدارة المستخدمين"
+  },
+  "addUser": "إضافة مستخدم",
+  "@addUser": {
+    "description": "زر إضافة مستخدم جديد"
+  },
+  "editUser": "تعديل مستخدم",
+  "@editUser": {
+    "description": "عنوان نافذة تعديل المستخدم"
+  },
+  "deleteUser": "حذف مستخدم",
+  "@deleteUser": {
+    "description": "زر حذف مستخدم"
+  },
+  "notifications": "الإشعارات",
+  "@notifications": {
+    "description": "خيار الإشعارات"
+  },
+  "notificationsDesc": "إعدادات التنبيهات والإشعارات",
+  "@notificationsDesc": {
+    "description": "وصف خيار الإشعارات"
+  },
+  "about": "حول التطبيق",
+  "@about": {
+    "description": "خيار حول التطبيق"
+  },
+  "aboutDesc": "نظام برو-بلس لإدارة الحضور v1.0.0",
+  "@aboutDesc": {
+    "description": "وصف التطبيق"
+  },
+  "activate": "تفعيل",
+  "@activate": {
+    "description": "نص تفعيل المستخدم"
+  },
+  "deactivate": "تعطيل",
+  "@deactivate": {
+    "description": "نص تعطيل المستخدم"
+  },
+  "role": "الدور",
+  "@role": {
+    "description": "حقل الدور"
+  },
+  "roleAdmin": "مدير",
+  "@roleAdmin": {
+    "description": "دور المدير"
+  },
+  "roleHR": "موارد بشرية",
+  "@roleHR": {
+    "description": "دور الموارد البشرية"
+  },
+  "roleViewer": "مشاهد",
+  "@roleViewer": {
+    "description": "دور المشاهد"
+  },
+  "users": "المستخدمون",
+  "@users": {
+    "description": "قائمة المستخدمين"
+  },
+  "noUsers": "لا يوجد مستخدمون",
+  "@noUsers": {
+    "description": "رسالة عدم وجود مستخدمين"
+  },
+  "confirmDelete": "تأكيد الحذف",
+  "@confirmDelete": {
+    "description": "عنوان نافذة تأكيد الحذف"
+  },
+  "confirmDeleteMessage": "هل أنت متأكد من حذف المستخدم",
+  "@confirmDeleteMessage": {
+    "description": "رسالة تأكيد حذف المستخدم"
+  },
+  "confirmDeleteUser": "هل أنت متأكد من حذف المستخدم \"{username}\"؟",
+  "@confirmDeleteUser": {
+    "description": "رسالة تأكيد حذف مستخدم معين",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "passwordChanged": "تم تغيير كلمة المرور بنجاح",
+  "@passwordChanged": {
+    "description": "رسالة نجاح تغيير كلمة المرور"
+  },
+  "userCreated": "تم إنشاء المستخدم بنجاح",
+  "@userCreated": {
+    "description": "رسالة نجاح إنشاء مستخدم"
+  },
+  "userUpdated": "تم تحديث المستخدم بنجاح",
+  "@userUpdated": {
+    "description": "رسالة نجاح تحديث المستخدم"
+  },
+  "userDeleted": "تم حذف المستخدم بنجاح",
+  "@userDeleted": {
+    "description": "رسالة نجاح حذف المستخدم"
+  },
+  "statusUpdated": "تم تحديث الحالة بنجاح",
+  "@statusUpdated": {
+    "description": "رسالة نجاح تحديث الحالة"
+  },
+  "cancel": "إلغاء",
+  "@cancel": {
+    "description": "زر إلغاء"
+  },
+  "save": "حفظ",
+  "@save": {
+    "description": "زر حفظ"
+  },
+  "confirm": "تأكيد",
+  "@confirm": {
+    "description": "زر تأكيد"
+  },
+  "addNew": "إضافة",
+  "@addNew": {
+    "description": "زر إضافة"
+  },
+  "update": "تحديث",
+  "@update": {
+    "description": "زر تحديث"
+  },
+  "delete": "حذف",
+  "@delete": {
+    "description": "زر حذف"
+  },
+  "close": "إغلاق",
+  "@close": {
+    "description": "زر إغلاق"
+  },
+  "reload": "إعادة تحميل",
+  "@reload": {
+    "description": "زر إعادة تحميل"
+  },
+  "status": "الحالة",
+  "@status": {
+    "description": "حقل الحالة"
+  },
+  "actions": "الإجراءات",
+  "@actions": {
+    "description": "رأس جدول الإجراءات"
+  },
+  "active": "نشط",
+  "@active": {
+    "description": "نص الحالة نشط"
+  },
+  "inactive": "غير نشط",
+  "@inactive": {
+    "description": "نص الحالة غير نشط"
+  },
+  "enabled": "مفعل",
+  "@enabled": {
+    "description": "نص مفعل"
+  },
+  "disabled": "معطل",
+  "@disabled": {
+    "description": "نص معطل"
+  },
+  "cannotDisableCurrentUser": "لا يمكن تعطيل المستخدم الحالي",
+  "@cannotDisableCurrentUser": {
+    "description": "تلميح عدم القدرة على تعطيل المستخدم الحالي"
+  },
+  "cannotEditCurrentUser": "لا يمكن تعديل المستخدم الحالي",
+  "@cannotEditCurrentUser": {
+    "description": "تلميح عدم القدرة على تعديل المستخدم الحالي"
+  },
+  "cannotDeleteCurrentUser": "لا يمكن حذف المستخدم الحالي",
+  "@cannotDeleteCurrentUser": {
+    "description": "تلميح عدم القدرة على حذف المستخدم الحالي"
+  },
+  "editUserDataPermissions": "تعديل بيانات المستخدم وصلاحياته",
+  "@editUserDataPermissions": {
+    "description": "نص توضيحي لتعديل المستخدم"
+  },
+  "addUserDataPrompt": "أدخل بيانات المستخدم لإضافته للنظام",
+  "@addUserDataPrompt": {
+    "description": "نص توضيحي لإضافة مستخدم"
+  },
+  "fullName": "الاسم",
+  "@fullName": {
+    "description": "حقل الاسم الكامل"
+  },
+  "employeeId": "رقم الموظف",
+  "@employeeId": {
+    "description": "حقل رقم الموظف"
+  },
+  "employeeUserId": "رقم الموظف (UserId)",
+  "@employeeUserId": {
+    "description": "حقل رقم الموظف UserId"
+  },
+  "employeeUserIdHint": "ادخل رقم الموظف ID",
+  "@employeeUserIdHint": {
+    "description": "تلميح حقل رقم الموظف"
+  },
+  "generateUniqueId": "توليد رقم فريد",
+  "@generateUniqueId": {
+    "description": "زر توليد رقم فريد"
+  },
+  "nameRequired": "الاسم مطلوب",
+  "@nameRequired": {
+    "description": "رسالة خطأ الاسم مطلوب"
+  },
+  "department": "القسم",
+  "@department": {
+    "description": "حقل القسم"
+  },
+  "position": "المنصب",
+  "@position": {
+    "description": "حقل المنصب"
+  },
+  "phone": "الهاتف",
+  "@phone": {
+    "description": "حقل الهاتف"
+  },
+  "email": "البريد الإلكتروني",
+  "@email": {
+    "description": "حقل البريد الإلكتروني"
+  },
+  "hireDate": "تاريخ التوظيف",
+  "@hireDate": {
+    "description": "حقل تاريخ التوظيف"
+  },
+  "address": "العنوان",
+  "@address": {
+    "description": "حقل العنوان"
+  },
+  "fingerPrint": "البصمة",
+  "@fingerPrint": {
+    "description": "حقل البصمة"
+  },
+  "search": "بحث",
+  "@search": {
+    "description": "زر بحث"
+  },
+  "searchByNameOrCode": "بحث بالاسم أو الرمز أو البطاقة...",
+  "@searchByNameOrCode": {
+    "description": "تلميح حقل البحث"
+  },
+  "all": "الكل",
+  "@all": {
+    "description": "خيار الكل"
+  },
+  "group": "المجموعة",
+  "@group": {
+    "description": "حقل المجموعة"
+  },
+  "importCSV": "استيراد CSV",
+  "@importCSV": {
+    "description": "زر استيراد CSV"
+  },
+  "addNewEmployee": "إضافة موظف جديد",
+  "@addNewEmployee": {
+    "description": "زر إضافة موظف جديد"
+  },
+  "code": "الرمز",
+  "@code": {
+    "description": "حقل الرمز"
+  },
+  "name": "الاسم",
+  "@name": {
+    "description": "حقل الاسم"
+  },
+  "card": "البطاقة",
+  "@card": {
+    "description": "حقل البطاقة"
+  },
+  "cardNo": "رقم البطاقة (CardNo)",
+  "@cardNo": {
+    "description": "حقل رقم البطاقة"
+  },
+  "profile": "الملف الشخصي",
+  "@profile": {
+    "description": "زر الملف الشخصي"
+  },
+  "manageFingerprints": "إدارة البصمات",
+  "@manageFingerprints": {
+    "description": "زر إدارة البصمات"
+  },
+  "manageFingerprintsFor": "إدارة البصمات - {name}",
+  "@manageFingerprintsFor": {
+    "description": "عنوان إدارة بصمات موظف",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "employeeImportResult": "تم إضافة {created} وتحديث {updated}",
+  "@employeeImportResult": {
+    "description": "نتيجة استيراد الموظفين",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      }
+    }
+  },
+  "employeeImportResultWithErrors": "تم إضافة {created} وتحديث {updated} ({errors} أخطاء)",
+  "@employeeImportResultWithErrors": {
+    "description": "نتيجة استيراد الموظفين مع أخطاء",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "errors": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmDeleteEmployee": "هل أنت متأكد من حذف {name}؟",
+  "@confirmDeleteEmployee": {
+    "description": "رسالة تأكيد حذف موظف",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "noRecordsFound": "لا توجد بيانات",
+  "@noRecordsFound": {
+    "description": "رسالة عدم وجود بيانات"
+  },
+  "noEmployees": "لا يوجد موظفون",
+  "@noEmployees": {
+    "description": "رسالة عدم وجود موظفين"
+  },
+  "withoutShift": "بدون وردية",
+  "@withoutShift": {
+    "description": "خيار بدون وردية"
+  },
+  "statsSummary": "ملخص الإحصائيات",
+  "@statsSummary": {
+    "description": "عنوان ملخص الإحصائيات"
+  },
+  "workHours": "ساعات العمل",
+  "@workHours": {
+    "description": "عنوان ساعات العمل"
+  },
+  "lateTime": "التأخير",
+  "@lateTime": {
+    "description": "عنوان التأخير"
+  },
+  "overtime": "العمل الإضافي",
+  "@overtime": {
+    "description": "عنوان العمل الإضافي"
+  },
+  "fingerprints": "البصمات",
+  "@fingerprints": {
+    "description": "عنوان البصمات"
+  },
+  "fingerprintNumber": "رقم الإصبع",
+  "@fingerprintNumber": {
+    "description": "حقل رقم الإصبع"
+  },
+  "biometricTextHint": "أدخل نص البصمة البيومترية...",
+  "@biometricTextHint": {
+    "description": "تلميح حقل النص البيومتري"
+  },
+  "searchByFingerprint": "بحث بالبصمة...",
+  "@searchByFingerprint": {
+    "description": "تلميح بحث بالبصمة"
+  },
+  "confirmDeleteFingerprint": "هل أنت متأكد من حذف هذه البصمة؟",
+  "@confirmDeleteFingerprint": {
+    "description": "رسالة تأكيد حذف بصمة"
+  },
+  "retry": "إعادة المحاولة",
+  "@retry": {
+    "description": "زر إعادة المحاولة"
+  },
+  "overview": "نظرة عامة على نظام الحضور والانصراف",
+  "@overview": {
+    "description": "نص نظرة عامة"
+  },
+  "activeEmployees": "{count} نشط",
+  "@activeEmployees": {
+    "description": "عدد الموظفين النشطين",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shifts": "الورديات",
+  "@shifts": {
+    "description": "عنوان الورديات"
+  },
+  "devices": "الأجهزة",
+  "@devices": {
+    "description": "عنوان الأجهزة"
+  },
+  "mostAbsent": "الأكثر غيابا",
+  "@mostAbsent": {
+    "description": "عنوان الأكثر غيابا"
+  },
+  "hoursAbbreviation": "{hours} س",
+  "@hoursAbbreviation": {
+    "description": "اختصار الساعات",
+    "placeholders": {
+      "hours": {
+        "type": "double"
+      }
+    }
+  },
+  "mostPresent": "الأكثر حضورا",
+  "@mostPresent": {
+    "description": "عنوان الأكثر حضورا"
+  },
+  "mostLate": "الأكثر تأخيرا",
+  "@mostLate": {
+    "description": "عنوان الأكثر تأخيرا"
+  },
+  "timesCount": "{count} مرة",
+  "@timesCount": {
+    "description": "عدد المرات",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noData": "لا توجد بيانات",
+  "@noData": {
+    "description": "رسالة لا توجد بيانات"
+  },
+  "recentActivities": "آخر النشاطات",
+  "@recentActivities": {
+    "description": "عنوان آخر النشاطات"
+  },
+  "noActivitiesToday": "لا توجد نشاطات اليوم",
+  "@noActivitiesToday": {
+    "description": "رسالة لا توجد نشاطات"
+  },
+  "unknownFingerprint": "بصمة غير معروفة",
+  "@unknownFingerprint": {
+    "description": "نص بصمة غير معروفة"
+  },
+  "unlinked": "غير مرتبط",
+  "@unlinked": {
+    "description": "نص غير مرتبط"
+  },
+  "todaySummary": "ملخص اليوم",
+  "@todaySummary": {
+    "description": "عنوان ملخص اليوم"
+  },
+  "present": "حاضر",
+  "@present": {
+    "description": "حالة حاضر"
+  },
+  "absent": "غائب",
+  "@absent": {
+    "description": "حالة غائب"
+  },
+  "lateStatus": "متأخر",
+  "@lateStatus": {
+    "description": "حالة متأخر"
+  },
+  "rawFingerprints": "البصمات الخام",
+  "@rawFingerprints": {
+    "description": "تبويب البصمات الخام"
+  },
+  "clearDateFilter": "إلغاء فلتر التاريخ",
+  "@clearDateFilter": {
+    "description": "تلميح إلغاء فلتر التاريخ"
+  },
+  "allEmployees": "كل الموظفين",
+  "@allEmployees": {
+    "description": "خيار كل الموظفين"
+  },
+  "unknownOnly": "غير المعروفة فقط",
+  "@unknownOnly": {
+    "description": "خيار غير المعروفة فقط"
+  },
+  "addManualAttendance": "إضافة حضور يدوي",
+  "@addManualAttendance": {
+    "description": "زر إضافة حضور يدوي"
+  },
+  "noRawFingerprints": "لا توجد بصمات خام",
+  "@noRawFingerprints": {
+    "description": "رسالة لا توجد بصمات خام"
+  },
+  "employee": "الموظف",
+  "@employee": {
+    "description": "حقل الموظف"
+  },
+  "dateTime": "وقت البصمة",
+  "@dateTime": {
+    "description": "حقل وقت البصمة"
+  },
+  "device": "الجهاز",
+  "@device": {
+    "description": "حقل الجهاز"
+  },
+  "action": "إجراء",
+  "@action": {
+    "description": "حقل الإجراء"
+  },
+  "unknownWithId": "غير معروف (ID: {id})",
+  "@unknownWithId": {
+    "description": "نص موظف غير معروف مع الرقم",
+    "placeholders": {
+      "id": {
+        "type": "int"
+      }
+    }
+  },
+  "linkToEmployee": "ربط بموظف",
+  "@linkToEmployee": {
+    "description": "زر ربط بموظف"
+  },
+  "addManualFingerprint": "إضافة بصمة يدوية",
+  "@addManualFingerprint": {
+    "description": "عنوان إضافة بصمة يدوية"
+  },
+  "selectEmployeeData": "حدد بيانات الموظف",
+  "@selectEmployeeData": {
+    "description": "تلميح اختيار بيانات الموظف"
+  },
+  "employeeNameIdFormat": "{name} (ID: {id})",
+  "@employeeNameIdFormat": {
+    "description": "تنسيق اسم الموظف مع الرقم",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "errorFetchingEmployees": "خطأ في جلب الموظفين",
+  "@errorFetchingEmployees": {
+    "description": "رسالة خطأ جلب الموظفين"
+  },
+  "fingerprintTime": "وقت البصمة",
+  "@fingerprintTime": {
+    "description": "حقل وقت البصمة"
+  },
+  "linkFingerprintToEmployee": "ربط بصمة بموظف",
+  "@linkFingerprintToEmployee": {
+    "description": "عنوان ربط بصمة بموظف"
+  },
+  "selectEmployee": "اختر الموظف",
+  "@selectEmployee": {
+    "description": "تلميح اختيار الموظف"
+  },
+  "link": "ربط",
+  "@link": {
+    "description": "زر ربط"
+  },
+  "fromDate": "من تاريخ",
+  "@fromDate": {
+    "description": "حقل من تاريخ"
+  },
+  "toDate": "إلى تاريخ",
+  "@toDate": {
+    "description": "حقل إلى تاريخ"
+  },
+  "refresh": "تحديث",
+  "@refresh": {
+    "description": "زر تحديث"
+  },
+  "excel": "Excel",
+  "@excel": {
+    "description": "زر Excel"
+  },
+  "pdf": "PDF",
+  "@pdf": {
+    "description": "زر PDF"
+  },
+  "reportExported": "تم تصدير التقرير بنجاح",
+  "@reportExported": {
+    "description": "رسالة نجاح تصدير التقرير"
+  },
+  "tableNo": "No.",
+  "@tableNo": {
+    "description": "رأس جدول الرقم"
+  },
+  "employeeName": "اسم الموظف",
+  "@employeeName": {
+    "description": "رأس جدول اسم الموظف"
+  },
+  "shiftLabel": "الوردية",
+  "@shiftLabel": {
+    "description": "رأس جدول الوردية"
+  },
+  "dateLabel": "التاريخ",
+  "@dateLabel": {
+    "description": "حقل التاريخ"
+  },
+  "firstFingerprint": "أول بصمة",
+  "@firstFingerprint": {
+    "description": "رأس جدول أول بصمة"
+  },
+  "lastFingerprint": "آخر بصمة",
+  "@lastFingerprint": {
+    "description": "رأس جدول آخر بصمة"
+  },
+  "totalHours": "عدد الساعات",
+  "@totalHours": {
+    "description": "رأس جدول عدد الساعات"
+  },
+  "fingerprintCount": "عدد البصمات",
+  "@fingerprintCount": {
+    "description": "رأس جدول عدد البصمات"
+  },
+  "totalAttendanceDays": "إجمالي أيام الدوام: {count}",
+  "@totalAttendanceDays": {
+    "description": "إجمالي أيام الدوام",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalHoursSummary": "إجمالي الساعات: {hours}",
+  "@totalHoursSummary": {
+    "description": "إجمالي الساعات",
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "dash": "---",
+  "@dash": {
+    "description": "نص شرطة للقيم الفارغة"
+  },
+  "rawFingerprintRecords": "سجلات البصمات الخام",
+  "@rawFingerprintRecords": {
+    "description": "عنوان سجلات البصمات الخام"
+  },
+  "employeeData": "بيانات الموظف",
+  "@employeeData": {
+    "description": "عنوان بيانات الموظف"
+  },
+  "employeeCode": "كود الموظف",
+  "@employeeCode": {
+    "description": "حقل كود الموظف"
+  },
+  "attendanceStatus": "حالة الدوام",
+  "@attendanceStatus": {
+    "description": "حقل حالة الدوام"
+  },
+  "shiftData": "بيانات الوردية",
+  "@shiftData": {
+    "description": "عنوان بيانات الوردية"
+  },
+  "attendanceTime": "وقت الحضور",
+  "@attendanceTime": {
+    "description": "حقل وقت الحضور"
+  },
+  "departureTime": "وقت الانصراف",
+  "@departureTime": {
+    "description": "حقل وقت الانصراف"
+  },
+  "errorLoadingRecords": "فشل تحميل السجلات: {error}",
+  "@errorLoadingRecords": {
+    "description": "رسالة خطأ تحميل السجلات",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "noRecordsForEmployee": "لا توجد سجلات بصمات لهذا الموظف في هذا التاريخ",
+  "@noRecordsForEmployee": {
+    "description": "رسالة لا توجد سجلات"
+  },
+  "attendanceReport": "تقرير الحضور",
+  "@attendanceReport": {
+    "description": "عنوان تقرير الحضور"
+  },
+  "exportExcel": "تصدير Excel",
+  "@exportExcel": {
+    "description": "زر تصدير Excel"
+  },
+  "exportPdf": "تصدير PDF",
+  "@exportPdf": {
+    "description": "زر تصدير PDF"
+  },
+  "selectReportType": "اختر نوع التقرير واضغط بحث",
+  "@selectReportType": {
+    "description": "رسالة اختر نوع التقرير"
+  },
+  "currencyFormat": "{amount} ر.ي",
+  "@currencyFormat": {
+    "description": "تنسيق العملة",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "addDevice": "إضافة جهاز",
+  "@addDevice": {
+    "description": "زر إضافة جهاز"
+  },
+  "deviceName": "اسم الجهاز",
+  "@deviceName": {
+    "description": "حقل اسم الجهاز"
+  },
+  "ipAddress": "عنوان IP",
+  "@ipAddress": {
+    "description": "حقل عنوان IP"
+  },
+  "port": "المنفذ",
+  "@port": {
+    "description": "حقل المنفذ"
+  },
+  "deviceType": "نوع الجهاز",
+  "@deviceType": {
+    "description": "حقل نوع الجهاز"
+  },
+  "noDevices": "لا توجد أجهزة",
+  "@noDevices": {
+    "description": "رسالة لا توجد أجهزة"
+  },
+  "connected": "متصل",
+  "@connected": {
+    "description": "حالة متصل"
+  },
+  "disconnected": "غير متصل",
+  "@disconnected": {
+    "description": "حالة غير متصل"
+  },
+  "lastSync": "آخر مزامنة",
+  "@lastSync": {
+    "description": "حقل آخر مزامنة"
+  },
+  "notSynced": "لم تتم المزامنة",
+  "@notSynced": {
+    "description": "نص لم تتم المزامنة"
+  },
+  "syncData": "مزامنة البيانات",
+  "@syncData": {
+    "description": "زر مزامنة البيانات"
+  },
+  "deviceId": "المعرف (ID)",
+  "@deviceId": {
+    "description": "حقل معرف الجهاز"
+  },
+  "lastRequestDate": "تاريخ آخر طلب",
+  "@lastRequestDate": {
+    "description": "حقل تاريخ آخر طلب"
+  },
+  "noRequestMade": "لم يتم الطلب مسبقاً",
+  "@noRequestMade": {
+    "description": "نص لم يتم الطلب"
+  },
+  "firmwareVersion": "اصدار Firmware",
+  "@firmwareVersion": {
+    "description": "حقل اصدار Firmware"
+  },
+  "notAvailable": "غير معرف",
+  "@notAvailable": {
+    "description": "نص غير معرف"
+  },
+  "serialNumber": "الرقم التسلسلي",
+  "@serialNumber": {
+    "description": "حقل الرقم التسلسلي"
+  },
+  "fetchProperties": "جلب الخصائص",
+  "@fetchProperties": {
+    "description": "زر جلب الخصائص"
+  },
+  "deviceNameRequired": "يرجى إدخال اسم الجهاز",
+  "@deviceNameRequired": {
+    "description": "رسالة خطأ اسم الجهاز مطلوب"
+  },
+  "confirmDeleteDevice": "هل أنت متأكد من حذف الجهاز \"{name}\"؟",
+  "@confirmDeleteDevice": {
+    "description": "رسالة تأكيد حذف جهاز",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deviceManagement": "إدارة أجهزة البصمة",
+  "@deviceManagement": {
+    "description": "عنوان إدارة أجهزة البصمة"
+  },
+  "deviceConnectedSuccess": "تم الاتصال بالجهاز بنجاح",
+  "@deviceConnectedSuccess": {
+    "description": "رسالة نجاح الاتصال بالجهاز"
+  },
+  "manageDevice": "ادارة الجهاز",
+  "@manageDevice": {
+    "description": "نص إدارة الجهاز"
+  },
+  "propertiesTab": "الخصائص والسمات",
+  "@propertiesTab": {
+    "description": "تبويب الخصائص والسمات"
+  },
+  "employeesTab": "الموظفين",
+  "@employeesTab": {
+    "description": "تبويب الموظفين"
+  },
+  "fingerprintsTab": "البصمات",
+  "@fingerprintsTab": {
+    "description": "تبويب البصمات"
+  },
+  "attendanceTab": "الحضور",
+  "@attendanceTab": {
+    "description": "تبويب الحضور"
+  },
+  "liveCaptureTab": "الاستماع المباشر",
+  "@liveCaptureTab": {
+    "description": "تبويب الاستماع المباشر"
+  },
+  "employeeDetails": "تفاصيل الموظف: {name}",
+  "@employeeDetails": {
+    "description": "عنوان تفاصيل الموظف",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "internalId": "المعرف الداخلي",
+  "@internalId": {
+    "description": "حقل المعرف الداخلي"
+  },
+  "cardNumber": "رقم البطاقة",
+  "@cardNumber": {
+    "description": "حقل رقم البطاقة"
+  },
+  "privilege": "المجموعة",
+  "@privilege": {
+    "description": "حقل المجموعة"
+  },
+  "privilegeManager": "مدير",
+  "@privilegeManager": {
+    "description": "صلاحية مدير"
+  },
+  "privilegeSupervisor": "مشرف عام",
+  "@privilegeSupervisor": {
+    "description": "صلاحية مشرف عام"
+  },
+  "privilegeEnroller": "مسجل",
+  "@privilegeEnroller": {
+    "description": "صلاحية مسجل"
+  },
+  "privilegeEmployee": "موظف",
+  "@privilegeEmployee": {
+    "description": "صلاحية موظف"
+  },
+  "knownEmployees": "الموظفين المعرفين",
+  "@knownEmployees": {
+    "description": "عنوان الموظفين المعرفين"
+  },
+  "addEmployee": "إضافة موظف",
+  "@addEmployee": {
+    "description": "زر إضافة موظف"
+  },
+  "sync": "مزامنة",
+  "@sync": {
+    "description": "زر مزامنة"
+  },
+  "download": "تحميل",
+  "@download": {
+    "description": "زر تحميل"
+  },
+  "loading": "جارٍ التحميل...",
+  "@loading": {
+    "description": "نص جارٍ التحميل"
+  },
+  "noTemplates": "لا توجد بصمات مسجلة",
+  "@noTemplates": {
+    "description": "رسالة لا توجد بصمات مسجلة"
+  },
+  "valid": "صالحة",
+  "@valid": {
+    "description": "نص صالحة"
+  },
+  "invalid": "غير صالحة",
+  "@invalid": {
+    "description": "نص غير صالحة"
+  },
+  "size": "الحجم",
+  "@size": {
+    "description": "حقل الحجم"
+  },
+  "flag": "العلامة",
+  "@flag": {
+    "description": "حقل العلامة"
+  },
+  "stateLabel": "الحالة",
+  "@stateLabel": {
+    "description": "رأس جدول الحالة"
+  },
+  "typeLabel": "النوع",
+  "@typeLabel": {
+    "description": "رأس جدول النوع"
+  },
+  "dateTimeLabel": "التاريخ والوقت",
+  "@dateTimeLabel": {
+    "description": "رأس جدول التاريخ والوقت"
+  },
+  "employeeCodeLabel": "رقم الموظف",
+  "@employeeCodeLabel": {
+    "description": "رأس جدول رقم الموظف"
+  },
+  "stop": "إيقاف",
+  "@stop": {
+    "description": "زر إيقاف"
+  },
+  "startListening": "بدء الاستماع",
+  "@startListening": {
+    "description": "زر بدء الاستماع"
+  },
+  "waitingForFingerprints": "بانتظار وصول بصمات...",
+  "@waitingForFingerprints": {
+    "description": "نص انتظار البصمات"
+  },
+  "deviceActivityReport": "تقرير كثافة البصمات على الأجهزة",
+  "@deviceActivityReport": {
+    "description": "عنوان تقرير كثافة البصمات"
+  },
+  "comingSoon": "تقرير الكثافة قريباً",
+  "@comingSoon": {
+    "description": "نص قريباً"
+  },
+  "featureUnderDevelopment": "هذه الميزة قيد التطوير وستكون متاحة قريباً",
+  "@featureUnderDevelopment": {
+    "description": "وصف ميزة قيد التطوير"
+  },
+  "shiftManagement": "إدارة الورديات",
+  "@shiftManagement": {
+    "description": "عنوان إدارة الورديات"
+  },
+  "addShift": "إضافة وردية",
+  "@addShift": {
+    "description": "زر إضافة وردية"
+  },
+  "shiftName": "اسم الوردية",
+  "@shiftName": {
+    "description": "حقل اسم الوردية"
+  },
+  "shiftNameRequired": "يرجى إدخال اسم الوردية",
+  "@shiftNameRequired": {
+    "description": "رسالة خطأ اسم الوردية مطلوب"
+  },
+  "startTime": "وقت البداية",
+  "@startTime": {
+    "description": "حقل وقت البداية"
+  },
+  "endTime": "وقت النهاية",
+  "@endTime": {
+    "description": "حقل وقت النهاية"
+  },
+  "nightShift": "ليلية",
+  "@nightShift": {
+    "description": "خيار وردية ليلية"
+  },
+  "overtimeShift": "إضافي",
+  "@overtimeShift": {
+    "description": "خيار إضافي"
+  },
+  "holiday": "عطلة",
+  "@holiday": {
+    "description": "خيار عطلة"
+  },
+  "noShifts": "لا توجد ورديات",
+  "@noShifts": {
+    "description": "رسالة لا توجد ورديات"
+  },
+  "editShift": "تعديل وردية",
+  "@editShift": {
+    "description": "عنوان تعديل وردية"
+  },
+  "addNewShift": "إضافة وردية جديدة",
+  "@addNewShift": {
+    "description": "عنوان إضافة وردية جديدة"
+  },
+  "editShiftData": "تعديل بيانات الوردية",
+  "@editShiftData": {
+    "description": "وصف تعديل الوردية"
+  },
+  "addShiftData": "أدخل بيانات الوردية لإضافتها",
+  "@addShiftData": {
+    "description": "وصف إضافة الوردية"
+  },
+  "earlyEntryBefore": "بداية الدخول (قبل)",
+  "@earlyEntryBefore": {
+    "description": "حقل بداية الدخول قبل"
+  },
+  "lateEntryAfter": "نهاية الدخول (بعد)",
+  "@lateEntryAfter": {
+    "description": "حقل نهاية الدخول بعد"
+  },
+  "earlyExitBefore": "بداية الخروج (قبل)",
+  "@earlyExitBefore": {
+    "description": "حقل بداية الخروج قبل"
+  },
+  "lateExitAfter": "نهاية الخروج (بعد)",
+  "@lateExitAfter": {
+    "description": "حقل نهاية الخروج بعد"
+  },
+  "maxAttendanceTime": "أقصى وقت للحضور",
+  "@maxAttendanceTime": {
+    "description": "حقل أقصى وقت للحضور"
+  },
+  "saving": "جاري الحفظ...",
+  "@saving": {
+    "description": "نص جاري الحفظ"
+  },
+  "confirmDeleteShift": "هل أنت متأكد من حذف الوردية \"{name}\"?",
+  "@confirmDeleteShift": {
+    "description": "رسالة تأكيد حذف وردية",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "systemDashboard": "لوحة تحكم النظام",
+  "@systemDashboard": {
+    "description": "عنوان لوحة تحكم النظام"
+  },
+  "systemSettingsDescription": "إدارة الإعدادات العامة والثوابت الأساسية للنظام",
+  "@systemSettingsDescription": {
+    "description": "وصف إعدادات النظام"
+  },
+  "shiftManagementCardDesc": "إدارة أوقات الورديات، فترات السماح، وأيام العمل",
+  "@shiftManagementCardDesc": {
+    "description": "وصف بطاقة إدارة الورديات"
+  },
+  "deviceManagementCardDesc": "إدارة أجهزة البصمة، الحالة، والمزامنة",
+  "@deviceManagementCardDesc": {
+    "description": "وصف بطاقة إدارة الأجهزة"
+  },
+  "newLabel": "جديد",
+  "@newLabel": {
+    "description": "نص جديد"
+  },
+  "existingLabel": "موجود",
+  "@existingLabel": {
+    "description": "نص موجود"
+  },
+  "selectedCountFormat": "المحدد: {selected} من {total}",
+  "@selectedCountFormat": {
+    "description": "تنسيق عدد المحدد",
+    "placeholders": {
+      "selected": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "editBeforeSync": "تعديل بيانات الموظف قبل المزامنة",
+  "@editBeforeSync": {
+    "description": "عنوان تعديل قبل المزامنة"
+  },
+  "syncCompleteWithErrors": "تمت المزامنة: {created} إضافة، {updated} تحديث، {skipped} تجاهل، {failed} فشل",
+  "@syncCompleteWithErrors": {
+    "description": "نتيجة المزامنة مع أخطاء",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      },
+      "failed": {
+        "type": "int"
+      }
+    }
+  },
+  "syncCompleteSuccess": "تمت المزامنة بنجاح: {created} إضافة، {updated} تحديث، {skipped} تجاهل",
+  "@syncCompleteSuccess": {
+    "description": "نتيجة المزامنة بنجاح",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "stateEntry": "دخول",
+  "@stateEntry": {
+    "description": "حالة دخول"
+  },
+  "stateExit": "خروج",
+  "@stateExit": {
+    "description": "حالة خروج"
+  },
+  "stateBreakStart": "بدء استراحة",
+  "@stateBreakStart": {
+    "description": "حالة بدء استراحة"
+  },
+  "stateBreakEnd": "نهاية استراحة",
+  "@stateBreakEnd": {
+    "description": "حالة نهاية استراحة"
+  },
+  "stateOvertimeIn": "عمل إضافي دخول",
+  "@stateOvertimeIn": {
+    "description": "حالة عمل إضافي دخول"
+  },
+  "stateOvertimeOut": "عمل إضافي خروج",
+  "@stateOvertimeOut": {
+    "description": "حالة عمل إضافي خروج"
+  },
+  "typeFingerprint": "بصمة",
+  "@typeFingerprint": {
+    "description": "نوع بصمة"
+  },
+  "typePassword": "كلمة سر",
+  "@typePassword": {
+    "description": "نوع كلمة سر"
+  },
+  "typeCard": "بطاقة",
+  "@typeCard": {
+    "description": "نوع بطاقة"
+  },
+  "typeFingerprintPassword": "بصمة+كلمة سر",
+  "@typeFingerprintPassword": {
+    "description": "نوع بصمة وكلمة سر"
+  },
+  "syncAttendanceRecords": "مزامنة سجلات الحضور",
+  "@syncAttendanceRecords": {
+    "description": "عنوان مزامنة الحضور"
+  },
+  "recordsInDevice": "عدد السجلات في الجهاز: {count}",
+  "@recordsInDevice": {
+    "description": "عدد السجلات في الجهاز",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inDatabase": "موجود في DB",
+  "@inDatabase": {
+    "description": "نص موجود في قاعدة البيانات"
+  },
+  "notFoundInDb": "--- (غير موجود)",
+  "@notFoundInDb": {
+    "description": "نص غير موجود في قاعدة البيانات"
+  },
+  "noEmployee": "بدون موظف",
+  "@noEmployee": {
+    "description": "نص بدون موظف"
+  },
+  "syncResultSummary": "المحدد: {selectedCount} جديد، {noEmployeeCount} بدون موظف",
+  "@syncResultSummary": {
+    "description": "ملخص نتائج المزامنة",
+    "placeholders": {
+      "selectedCount": {
+        "type": "int"
+      },
+      "noEmployeeCount": {
+        "type": "int"
+      }
+    }
+  },
+  "syncing": "جارٍ المزامنة...",
+  "@syncing": {
+    "description": "نص جارٍ المزامنة"
+  },
+  "syncAttendanceBtn": "مزامنة البيانات",
+  "@syncAttendanceBtn": {
+    "description": "زر مزامنة البيانات"
+  },
+  "recordsWithoutEmployeeWarning": "السجلات بدون موظف (رقم الموظف غير موجود في قاعدة البيانات) لن تتم مزامنتها",
+  "@recordsWithoutEmployeeWarning": {
+    "description": "تحذير السجلات بدون موظف"
+  },
+  "syncAttendanceResult": "تمت المزامنة: {created} إضافة، {skipped} تجاهل، {failed} فشل",
+  "@syncAttendanceResult": {
+    "description": "نتيجة مزامنة الحضور مع أخطاء",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      },
+      "failed": {
+        "type": "int"
+      }
+    }
+  },
+  "syncAttendanceResultSuccess": "تمت المزامنة بنجاح: {created} سجل جديد، {skipped} تجاهل",
+  "@syncAttendanceResultSuccess": {
+    "description": "نتيجة مزامنة الحضور بنجاح",
+    "placeholders": {
+      "created": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "proPlusAttendance": "Pro-Plus Attendance",
+  "@proPlusAttendance": {
+    "description": "اسم التطبيق بالانجليزية"
+  },
+  "splashInitializing": "جاري تهيئة التطبيق...",
+  "@splashInitializing": {
+    "description": "حالة تهيئة التطبيق"
+  },
+  "splashStartingPostgres": "جاري تشغيل قاعدة البيانات...",
+  "@splashStartingPostgres": {
+    "description": "حالة تشغيل قاعدة البيانات"
+  },
+  "splashStartingBackend": "جاري تشغيل الخادم...",
+  "@splashStartingBackend": {
+    "description": "حالة تشغيل الخادم"
+  },
+  "splashReady": "التطبيق جاهز",
+  "@splashReady": {
+    "description": "التطبيق جاهز للاستخدام"
+  },
+  "splashError": "حدث خطأ أثناء التهيئة",
+  "@splashError": {
+    "description": "رسالة خطأ في شاشة البداية"
+  },
+  "splashRetry": "إعادة المحاولة",
+  "@splashRetry": {
+    "description": "زر إعادة المحاولة"
+  }
+}

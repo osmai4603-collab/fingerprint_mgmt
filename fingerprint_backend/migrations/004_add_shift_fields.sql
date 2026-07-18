@@ -1,0 +1,8 @@
+ALTER TABLE shifts
+    ADD COLUMN before_start_time TIME NOT NULL DEFAULT '00:00:00',
+    ADD COLUMN after_start_time TIME NOT NULL DEFAULT '00:00:00',
+    ADD COLUMN before_end_time TIME NOT NULL DEFAULT '00:00:00',
+    ADD COLUMN after_end_time TIME NOT NULL DEFAULT '00:00:00',
+    ADD COLUMN max_attendance_time TIME NOT NULL DEFAULT '00:00:00',
+    ADD COLUMN is_night_shift BOOLEAN NOT NULL DEFAULT FALSE,
+    ADD COLUMN accept_overtime BOOLEAN NOT NULL DEFAULT TRUE;
