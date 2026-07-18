@@ -144,10 +144,7 @@ jobs:
           ..\build\venv\Scripts\pip install -r ..\fingerprint_backend\requirements.txt
           ..\build\venv\Scripts\pip install pyinstaller
           cd ..\fingerprint_backend
-          ..\build\venv\Scripts\pyinstaller --clean ^
-            --distpath ..\build\backend_dist ^
-            --workpath ..\build\backend_build ^
-            backend.spec
+          ..\build\venv\Scripts\pyinstaller --clean --distpath ..\build\backend_dist --workpath ..\build\backend_build backend.spec
 
       - name: Download PostgreSQL portable
         shell: powershell
