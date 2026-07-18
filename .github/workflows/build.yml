@@ -71,20 +71,19 @@ jobs:
       - name: Download PostgreSQL portable
         run: |
           mkdir -p ../build/postgres
-          wget -q "https://get.enterprisedb.com/postgresql/postgresql-${POSTGRES_VERSION}-1-linux-x64-binaries.tar.gz" \
-            -O ../build/postgresql.tar.gz || echo "Download failed (will use system PostgreSQL)"
-          if [ -f ../build/postgresql.tar.gz ]; then
-            tar xzf ../build/postgresql.tar.gz -C ../build
-            if [ -d ../build/pgsql ]; then
-              mv ../build/pgsql/* ../build/postgres/
-            else
-              EXTRACTED_DIR=$(find ../build -maxdepth 1 -type d -name "postgresql*" | head -1)
-              if [ -n "$EXTRACTED_DIR" ] && [ "$EXTRACTED_DIR" != "../build/postgres" ]; then
-                mv "$EXTRACTED_DIR"/* ../build/postgres/
-              fi
+          wget -q "https://sbp.enterprisedb.com/getfile.jsp?fileid=1258254" \
+            -O ../build/postgresql.tar.gz 2>/dev/null && \
+          tar xzf ../build/postgresql.tar.gz -C ../build && \
+          if [ -d ../build/pgsql ]; then
+            mv ../build/pgsql/* ../build/postgres/
+          else
+            EXTRACTED_DIR=$(find ../build -maxdepth 1 -type d -name "postgresql*" | head -1)
+            if [ -n "$EXTRACTED_DIR" ] && [ "$EXTRACTED_DIR" != "../build/postgres" ]; then
+              mv "$EXTRACTED_DIR"/* ../build/postgres/
             fi
-            rm -f ../build/postgresql.tar.gz
-          fi
+          fi && \
+          rm -f ../build/postgresql.tar.gz || \
+          echo "PostgreSQL download/extract failed - app will require system PostgreSQL"
 
       - name: Get Flutter packages
         run: flutter pub get
@@ -151,18 +150,22 @@ jobs:
         run: |
           $ProgressPreference = 'SilentlyContinue'
           $zip = "..\build\postgresql.zip"
-          Invoke-WebRequest -Uri "https://get.enterprisedb.com/postgresql/postgresql-$env:POSTGRES_VERSION-1-windows-x64-binaries.zip" -OutFile $zip
-          Expand-Archive -Path $zip -DestinationPath "..\build\" -Force
-          if (Test-Path "..\build\pgsql") {
-            Move-Item "..\build\pgsql\*" "..\build\postgres\" -Force
-          } else {
-            $dir = Get-ChildItem "..\build\" -Directory | Where-Object { $_.Name -like "postgresql*" } | Select-Object -First 1
-            if ($dir) {
-              New-Item -ItemType Directory -Force -Path "..\build\postgres"
-              Move-Item "$($dir.FullName)\*" "..\build\postgres\" -Force
+          try {
+            Invoke-WebRequest -Uri "https://sbp.enterprisedb.com/getfile.jsp?fileid=1260308" -OutFile $zip
+            Expand-Archive -Path $zip -DestinationPath "..\build\" -Force
+            if (Test-Path "..\build\pgsql") {
+              Move-Item "..\build\pgsql\*" "..\build\postgres\" -Force
+            } else {
+              $dir = Get-ChildItem "..\build\" -Directory | Where-Object { $_.Name -like "postgresql*" } | Select-Object -First 1
+              if ($dir) {
+                New-Item -ItemType Directory -Force -Path "..\build\postgres"
+                Move-Item "$($dir.FullName)\*" "..\build\postgres\" -Force
+              }
             }
+            Remove-Item $zip -Force
+          } catch {
+            Write-Host "PostgreSQL download/extract failed - app will require system PostgreSQL"
           }
-          Remove-Item $zip -Force
 
       - name: Get Flutter packages
         run: flutter pub get
