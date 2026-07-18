@@ -1,4 +1,4 @@
-name: Build Standalone
+name: Build Windows
 
 on:
   push:
@@ -7,118 +7,14 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
-    inputs:
-      target:
-        description: 'Build target (linux, windows, or all)'
-        required: true
-        default: 'all'
-        type: choice
-        options:
-          - all
-          - linux
-          - windows
 
 jobs:
-  build-linux:
-    name: Linux Build
-    if: ${{ github.event_name != 'workflow_dispatch' || inputs.target == 'all' || inputs.target == 'linux' }}
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: fingerprint_frontend
-
-    env:
-      POSTGRES_VERSION: "16.4"
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          cache: true
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-          cache-dependency-path: fingerprint_backend/requirements.txt
-
-      - name: Install Linux system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            clang cmake ninja-build pkg-config \
-            libgtk-3-dev liblzma-dev libstdc++-12-dev \
-            libsqlite3-dev libssl-dev \
-            wget
-
-      - name: Build backend with PyInstaller
-        run: |
-          python -m venv ../build/venv
-          source ../build/venv/bin/activate
-          pip install --upgrade pip
-          pip install -r ../fingerprint_backend/requirements.txt
-          pip install pyinstaller
-          cd ../fingerprint_backend
-          pyinstaller --clean \
-            --distpath ../build/backend_dist \
-            --workpath ../build/backend_build \
-            backend.spec
-
-      - name: Download PostgreSQL portable
-        run: |
-          mkdir -p ../build/postgres
-          wget -q "https://sbp.enterprisedb.com/getfile.jsp?fileid=1258254" \
-            -O ../build/postgresql.tar.gz 2>/dev/null && \
-          tar xzf ../build/postgresql.tar.gz -C ../build && \
-          if [ -d ../build/pgsql ]; then
-            mv ../build/pgsql/* ../build/postgres/
-          else
-            EXTRACTED_DIR=$(find ../build -maxdepth 1 -type d -name "postgresql*" | head -1)
-            if [ -n "$EXTRACTED_DIR" ] && [ "$EXTRACTED_DIR" != "../build/postgres" ]; then
-              mv "$EXTRACTED_DIR"/* ../build/postgres/
-            fi
-          fi && \
-          rm -f ../build/postgresql.tar.gz || \
-          echo "PostgreSQL download/extract failed - app will require system PostgreSQL"
-
-      - name: Get Flutter packages
-        run: flutter pub get
-
-      - name: Build Flutter Linux app
-        run: flutter build linux --release
-
-      - name: Bundle backend with Flutter app
-        run: |
-          FLUTTER_BUNDLE="build/linux/x64/release/bundle"
-          BUNDLE_BACKEND="$FLUTTER_BUNDLE/backend"
-          mkdir -p "$BUNDLE_BACKEND"
-          cp ../build/backend_dist/backend_server "$BUNDLE_BACKEND/"
-          cp -r ../fingerprint_backend/migrations "$BUNDLE_BACKEND/"
-          if [ -d "../build/postgres/bin" ]; then
-            cp -r ../build/postgres "$FLUTTER_BUNDLE/"
-          fi
-
-      - name: Upload Linux artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: fingerprint-mgmt-linux
-          path: fingerprint_frontend/build/linux/x64/release/bundle
-          compression-level: 9
-
   build-windows:
     name: Windows Build
-    if: ${{ github.event_name != 'workflow_dispatch' || inputs.target == 'all' || inputs.target == 'windows' }}
     runs-on: windows-latest
     defaults:
       run:
         working-directory: fingerprint_frontend
-
-    env:
-      POSTGRES_VERSION: "16.4"
 
     steps:
       - uses: actions/checkout@v4
@@ -182,9 +78,9 @@ jobs:
           $bundleBackend = "$flutterBundle\backend"
           New-Item -ItemType Directory -Force -Path $bundleBackend
           Copy-Item "..\build\backend_dist\backend_server.exe" "$bundleBackend\" -Force
-          Copy-Item "..\fingerprint_backend\migrations\*" "$bundleBackend\migrations\" -Recurse -Force
+          Copy-Item "..\fingerprint_backend\migrations" "$bundleBackend\" -Recurse -Force
           if (Test-Path "..\build\postgres\bin") {
-            Copy-Item "..\build\postgres\*" "$flutterBundle\postgres\" -Recurse -Force
+            Copy-Item "..\build\postgres" "$flutterBundle\" -Recurse -Force
           }
 
       - name: Upload Windows artifact
