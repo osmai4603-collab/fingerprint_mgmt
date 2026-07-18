@@ -153,14 +153,16 @@ jobs:
           try {
             Invoke-WebRequest -Uri "https://sbp.enterprisedb.com/getfile.jsp?fileid=1260308" -OutFile $zip
             Expand-Archive -Path $zip -DestinationPath "..\build\" -Force
+            $src = $null
             if (Test-Path "..\build\pgsql") {
-              Move-Item "..\build\pgsql\*" "..\build\postgres\" -Force
+              $src = "..\build\pgsql"
             } else {
-              $dir = Get-ChildItem "..\build\" -Directory | Where-Object { $_.Name -like "postgresql*" } | Select-Object -First 1
-              if ($dir) {
-                New-Item -ItemType Directory -Force -Path "..\build\postgres"
-                Move-Item "$($dir.FullName)\*" "..\build\postgres\" -Force
-              }
+              $src = Get-ChildItem "..\build\" -Directory | Where-Object { $_.Name -like "postgresql*" } | Select-Object -First 1
+            }
+            if ($src) {
+              New-Item -ItemType Directory -Force -Path "..\build\postgres" | Out-Null
+              Copy-Item "$src\*" "..\build\postgres\" -Recurse -Force
+              Remove-Item $src -Recurse -Force
             }
             Remove-Item $zip -Force
           } catch {
