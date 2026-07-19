@@ -78,8 +78,11 @@ fi
 log "Copying backend to frontend assets..."
 FRONTEND_ASSETS_DIR="$FRONTEND_DIR/assets/backend"
 mkdir -p "$FRONTEND_ASSETS_DIR"
-cp "$BACKEND_EXE" "$FRONTEND_ASSETS_DIR/"
-cp -r "$BACKEND_DIR/migrations" "$FRONTEND_ASSETS_DIR/"
+cp "$BACKEND_EXE" "$FRONTEND_ASSETS_DIR/" || true
+mkdir -p "$FRONTEND_ASSETS_DIR/migrations"
+cp -r "$BACKEND_DIR/migrations/"* "$FRONTEND_ASSETS_DIR/migrations/" || true
+touch "$FRONTEND_ASSETS_DIR/.keep"
+touch "$FRONTEND_ASSETS_DIR/migrations/.keep"
 
 # ── Step 4: Bundle everything ──
 log "Bundling files..."

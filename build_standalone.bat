@@ -55,8 +55,11 @@ if not exist "%POSTGRES_DIR%\bin" (
 echo [build] Copying backend to frontend assets...
 set "FRONTEND_ASSETS_DIR=%FRONTEND_DIR%\assets\backend"
 if not exist "%FRONTEND_ASSETS_DIR%" mkdir "%FRONTEND_ASSETS_DIR%"
-copy /Y "%BUILD_DIR%\backend_dist\backend_server.exe" "%FRONTEND_ASSETS_DIR%\"
-xcopy /E /I /Y "%BACKEND_DIR%\migrations\*" "%FRONTEND_ASSETS_DIR%\migrations\"
+copy /Y "%BUILD_DIR%\backend_dist\backend_server.exe" "%FRONTEND_ASSETS_DIR%\" >nul 2>&1
+if not exist "%FRONTEND_ASSETS_DIR%\migrations" mkdir "%FRONTEND_ASSETS_DIR%\migrations"
+xcopy /E /I /Y "%BACKEND_DIR%\migrations\*" "%FRONTEND_ASSETS_DIR%\migrations\" >nul 2>&1
+echo. > "%FRONTEND_ASSETS_DIR%\.keep"
+echo. > "%FRONTEND_ASSETS_DIR%\migrations\.keep"
 
 :: Step 4: Build Flutter and bundle
 echo [build] Building Flutter Windows app...
