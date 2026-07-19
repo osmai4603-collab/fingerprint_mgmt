@@ -65,20 +65,30 @@ jobs:
             Write-Host "PostgreSQL download/extract failed - app will require system PostgreSQL"
           }
 
+      - name: Copy backend to frontend assets
+        shell: powershell
+        run: |
+          $frontendAssets = "assets\backend"
+          New-Item -ItemType Directory -Force -Path "$frontendAssets\migrations"
+          if (Test-Path "..\build\backend_dist\backend_server.exe") {
+            Copy-Item "..\build\backend_dist\backend_server.exe" "$frontendAssets\" -Force
+          }
+          if (Test-Path "..\fingerprint_backend\migrations") {
+            Copy-Item "..\fingerprint_backend\migrations\*" "$frontendAssets\migrations\" -Recurse -Force
+          }
+          Set-Content -Path "$frontendAssets\.keep" -Value ""
+          Set-Content -Path "$frontendAssets\migrations\.keep" -Value ""
+
       - name: Get Flutter packages
         run: flutter pub get
 
       - name: Build Flutter Windows app
         run: flutter build windows --release
 
-      - name: Bundle backend with Flutter app
+      - name: Bundle PostgreSQL with Flutter app
         shell: powershell
         run: |
           $flutterBundle = "build\windows\x64\runner\Release"
-          $bundleBackend = "$flutterBundle\backend"
-          New-Item -ItemType Directory -Force -Path $bundleBackend
-          Copy-Item "..\build\backend_dist\backend_server.exe" "$bundleBackend\" -Force
-          Copy-Item "..\fingerprint_backend\migrations" "$bundleBackend\" -Recurse -Force
           if (Test-Path "..\build\postgres\bin") {
             Copy-Item "..\build\postgres" "$flutterBundle\" -Recurse -Force
           }
