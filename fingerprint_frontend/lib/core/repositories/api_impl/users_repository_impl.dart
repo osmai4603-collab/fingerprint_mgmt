@@ -42,7 +42,6 @@ class UsersRepositoryImpl implements UsersRepository {
       }
       return Left(ServerFailure(e.toString()));
     } catch (e) {
-      debugPrint('Error: $e');
       return Left(ServerFailure('حدث خطأ غير متوقع: $e'));
     }
   }

@@ -7,7 +7,8 @@ import 'package:fingerprint_frontend/core/repositories/interfaces/biometric_devi
 class DevicesBloc extends Bloc<DevicesEvent, DevicesState> {
   final BiometricDevicesRepository _biometricDevicesRepository;
 
-  DevicesBloc(this._biometricDevicesRepository) : super(const DevicesInitial()) {
+  DevicesBloc(this._biometricDevicesRepository)
+    : super(const DevicesInitial()) {
     on<LoadDevicesEvent>(_onLoadDevices);
     on<CreateDeviceEvent>(_onCreateDevice);
     on<UpdateDeviceEvent>(_onUpdateDevice);
@@ -34,7 +35,6 @@ class DevicesBloc extends Bloc<DevicesEvent, DevicesState> {
     emit(const DevicesLoading());
     final result = await _biometricDevicesRepository.create(event.device);
     result.fold((failure) => emit(DevicesError(failure.message)), (device) {
-      debugPrint('Device CREATED: $device');
       emit(const DevicesOperationSuccess('تم إضافة الجهاز بنجاح'));
       add(const LoadDevicesEvent());
     });

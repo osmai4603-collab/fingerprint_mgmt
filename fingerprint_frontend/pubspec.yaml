@@ -78,15 +78,17 @@ flutter:
   fonts:
     - family: Noto_Naskh_Arabic
       fonts:
-        - asset: fonts/Noto_Naskh_Arabic/NotoNaskhArabic-Bold.ttf
-        - asset: fonts/Noto_Naskh_Arabic/NotoNaskhArabic-Medium.ttf
-        - asset: fonts/Noto_Naskh_Arabic/NotoNaskhArabic-Regular.ttf
-        - asset: fonts/Noto_Naskh_Arabic/NotoNaskhArabic-SemiBold.ttf
-        - asset: fonts/Noto_Naskh_Arabic/NotoNaskhArabic-VariableFont_wght.ttf
+        - asset: assets/fonts/Noto_Naskh_Arabic/NotoNaskhArabic-Bold.ttf
+        - asset: assets/fonts/Noto_Naskh_Arabic/NotoNaskhArabic-Medium.ttf
+        - asset: assets/fonts/Noto_Naskh_Arabic/NotoNaskhArabic-Regular.ttf
+        - asset: assets/fonts/Noto_Naskh_Arabic/NotoNaskhArabic-SemiBold.ttf
+        - asset: assets/fonts/Noto_Naskh_Arabic/NotoNaskhArabic-VariableFont_wght.ttf
 
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/backend/
+    - assets/backend/migrations/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

@@ -1,5 +1,4 @@
 import 'package:fingerprint_frontend/core/shared/enums/biometric_device_type.dart';
-import 'package:flutter/material.dart';
 
 import '../entities/biometric_device_entity.dart';
 
@@ -16,7 +15,6 @@ final class BiometricDeviceModel extends BiometricDeviceEntity {
   });
 
   factory BiometricDeviceModel.fromMap(Map<String, dynamic> data) {
-    debugPrint('BiometricDeviceModel.fromMap: $data');
     return BiometricDeviceModel(
       id: data['id'] as int? ?? 0,
       name: data['name'] as String? ?? '',

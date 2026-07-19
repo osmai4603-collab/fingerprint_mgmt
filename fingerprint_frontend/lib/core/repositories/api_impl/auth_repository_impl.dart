@@ -42,7 +42,6 @@ class AuthRepositoryImpl implements AuthRepository {
       }
       return Left(ServerFailure(e.toString()));
     } catch (e) {
-      debugPrint('Error: $e');
       return Left(ServerFailure('حدث خطأ غير متوقع: $e'));
     }
   }
@@ -106,10 +105,7 @@ class AuthRepositoryImpl implements AuthRepository {
       if (entity.employeeId != null) {
         body['employee_id'] = entity.employeeId;
       }
-      await _apiClient.put(
-        ApiEndpoints.authUser(entity.id),
-        data: body,
-      );
+      await _apiClient.put(ApiEndpoints.authUser(entity.id), data: body);
       return const Right(null);
     } on DioException catch (e) {
       final detail = e.response?.data?['detail']?.toString();

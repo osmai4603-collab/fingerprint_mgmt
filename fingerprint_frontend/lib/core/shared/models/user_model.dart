@@ -17,9 +17,6 @@ final class UserModel extends UserEntity {
   });
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
-    debugPrint(
-      'UserModel.fromMap toModel: ${map.keys.map((key) => '$key: ${map[key]}').join(', ')}',
-    );
     return UserModel(
       id: map['id'] as int,
       username: map['username'] as String? ?? '',

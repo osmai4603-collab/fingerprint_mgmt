@@ -74,6 +74,13 @@ if [ ! -d "$POSTGRES_DIR/bin" ]; then
   fi
 fi
 
+# ── Step 3.5: Copy backend to frontend assets ──
+log "Copying backend to frontend assets..."
+FRONTEND_ASSETS_DIR="$FRONTEND_DIR/assets/backend"
+mkdir -p "$FRONTEND_ASSETS_DIR"
+cp "$BACKEND_EXE" "$FRONTEND_ASSETS_DIR/"
+cp -r "$BACKEND_DIR/migrations" "$FRONTEND_ASSETS_DIR/"
+
 # ── Step 4: Bundle everything ──
 log "Bundling files..."
 FLUTTER_BUNDLE_DIR="$FRONTEND_DIR/build/linux/x64/release/bundle"

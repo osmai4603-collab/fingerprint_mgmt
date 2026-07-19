@@ -121,34 +121,32 @@ class BackendManager {
 
     if (Platform.isLinux) {
       final home = Platform.environment['HOME'] ?? '/tmp';
-      userDataDir = '$home/.local/share/$appName';
+      userDataDir = path.join(home, '.local', 'share', appName);
     } else if (Platform.isWindows) {
       final appData =
-          Platform.environment['APPDATA'] ?? 'C:/Users/Default/AppData/Roaming';
-      userDataDir = '$appData/$appName';
+          Platform.environment['APPDATA'] ?? 'C:\\Users\\Default\\AppData\\Roaming';
+      userDataDir = path.join(appData, appName);
     } else {
-      userDataDir = '/tmp/$appName';
+      userDataDir = path.join('/tmp', appName);
     }
 
-    pgDataDir = '$userDataDir/pgdata';
-    pgLogDir = '$userDataDir/pg_log';
-    pgLogFile = '$pgLogDir/postgres.log';
-    backendLogFile = '$userDataDir/backend.log';
+    pgDataDir = path.join(userDataDir, 'pgdata');
+    pgLogDir = path.join(userDataDir, 'pg_log');
+    pgLogFile = path.join(pgLogDir, 'postgres.log');
+    backendLogFile = path.join(userDataDir, 'backend.log');
 
-    final separator = Platform.isWindows ? '\\' : '/';
-    final backendDir = '$bundleDir${separator}backend';
+    final backendDir = path.join(bundleDir, 'backend');
 
     if (Platform.isWindows) {
-      backendExePath = '$backendDir\\backend_server.exe';
+      backendExePath = path.join(backendDir, 'backend_server.exe');
     } else {
-      backendExePath = '$backendDir/backend_server';
+      backendExePath = path.join(backendDir, 'backend_server');
     }
 
+    migrationsDir = path.join(backendDir, 'migrations');
 
-    migrationsDir = '$backendDir${separator}migrations';
-
-    final pgBase = '$bundleDir${separator}postgres';
-    final pgBinDir = '$pgBase${separator}bin';
+    final pgBase = path.join(bundleDir, 'postgres');
+    final pgBinDir = path.join(pgBase, 'bin');
     if (Directory(pgBinDir).existsSync()) {
       postgresBinDir = pgBinDir;
     } else {
@@ -170,8 +168,8 @@ class BackendManager {
     Directory(pgDataDir).createSync(recursive: true);
     Directory(pgLogDir).createSync(recursive: true);
 
-    final pgCtl = '$postgresBinDir${Platform.isWindows ? '\\' : '/'}pg_ctl';
-    final initdb = '$postgresBinDir${Platform.isWindows ? '\\' : '/'}initdb';
+    final pgCtl = path.join(postgresBinDir!, 'pg_ctl');
+    final initdb = path.join(postgresBinDir!, 'initdb');
 
     if (!Directory(pgDataDir).listSync().any((e) =>
         e is File && e.path.endsWith('postgresql.conf'))) {
@@ -223,7 +221,7 @@ class BackendManager {
 
     while (!ready && DateTime.now().isBefore(deadline)) {
       try {
-        final pgIsready = '$postgresBinDir${Platform.isWindows ? '\\' : '/'}pg_isready';
+        final pgIsready = path.join(postgresBinDir!, 'pg_isready');
         final result = await Process.run(pgIsready, [
           '-h', 'localhost',
           '-p', '$_pgPort',
@@ -263,7 +261,7 @@ class BackendManager {
   }
 
   String _createPasswordFile() {
-    final file = File('$userDataDir/pg_password.tmp');
+    final file = File(path.join(userDataDir, 'pg_password.tmp'));
     file.writeAsStringSync('postgres');
     return file.path;
   }
@@ -275,8 +273,7 @@ class BackendManager {
 
     if (postgresBinDir == null) return;
 
-    final createdb =
-        '$postgresBinDir${Platform.isWindows ? '\\' : '/'}createdb';
+    final createdb = path.join(postgresBinDir!, 'createdb');
 
     final result = await Process.run(createdb, [
       '-h', 'localhost',
@@ -413,7 +410,7 @@ class BackendManager {
 
   Future<void> _stopPostgres() async {
     if (postgresBinDir != null && Directory(pgDataDir).existsSync()) {
-      final pgCtl = '$postgresBinDir${Platform.isWindows ? '\\' : '/'}pg_ctl';
+      final pgCtl = path.join(postgresBinDir!, 'pg_ctl');
       try {
         await Process.run(pgCtl, [
           'stop',
