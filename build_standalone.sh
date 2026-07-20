@@ -93,7 +93,7 @@ if [ "$TARGET" = "linux" ]; then
   cd "$FRONTEND_DIR"
   flutter build linux --release
   
-  BUNDLE_BACKEND_DIR="$FLUTTER_BUNDLE_DIR/backend"
+  BUNDLE_BACKEND_DIR="$FLUTTER_BUNDLE_DIR/assets/backend"
   mkdir -p "$BUNDLE_BACKEND_DIR"
   
   cp "$BACKEND_EXE" "$BUNDLE_BACKEND_DIR/"
@@ -101,7 +101,7 @@ if [ "$TARGET" = "linux" ]; then
   
   # Copy PostgreSQL portable
   if [ -d "$POSTGRES_DIR/bin" ]; then
-    BUNDLE_POSTGRES_DIR="$FLUTTER_BUNDLE_DIR/postgres"
+    BUNDLE_POSTGRES_DIR="$FLUTTER_BUNDLE_DIR/assets/postgres"
     mkdir -p "$BUNDLE_POSTGRES_DIR"
     cp -r "$POSTGRES_DIR"/* "$BUNDLE_POSTGRES_DIR/"
   fi
@@ -114,14 +114,14 @@ elif [ "$TARGET" = "windows" ]; then
   flutter build windows --release
   
   FLUTTER_BUNDLE_DIR="$FRONTEND_DIR/build/windows/x64/runner/Release"
-  BUNDLE_BACKEND_DIR="$FLUTTER_BUNDLE_DIR/backend"
+  BUNDLE_BACKEND_DIR="$FLUTTER_BUNDLE_DIR/assets/backend"
   mkdir -p "$BUNDLE_BACKEND_DIR"
   
   cp "$BACKEND_EXE" "$BUNDLE_BACKEND_DIR/"
   cp -r "$BACKEND_DIR/migrations" "$BUNDLE_BACKEND_DIR/"
   
   if [ -d "$POSTGRES_DIR/bin" ]; then
-    BUNDLE_POSTGRES_DIR="$FLUTTER_BUNDLE_DIR/postgres"
+    BUNDLE_POSTGRES_DIR="$FLUTTER_BUNDLE_DIR/assets/postgres"
     mkdir -p "$BUNDLE_POSTGRES_DIR"
     cp -r "$POSTGRES_DIR"/* "$BUNDLE_POSTGRES_DIR/"
   fi

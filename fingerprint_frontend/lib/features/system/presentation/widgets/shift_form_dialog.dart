@@ -154,7 +154,6 @@ class _ShiftFormDialogState extends State<ShiftFormDialog>
     } else {
       context.read<ShiftsBloc>().add(CreateShiftEvent(shift: shift));
     }
-    Navigator.pop(context, true);
   }
 
   Widget _buildAnimatedField(int index, Widget child) {

@@ -67,14 +67,14 @@ cd /d "%FRONTEND_DIR%"
 flutter build windows --release
 
 set "FLUTTER_BUNDLE_DIR=%FRONTEND_DIR%\build\windows\x64\runner\Release"
-set "BUNDLE_BACKEND_DIR=%FLUTTER_BUNDLE_DIR%\backend"
+set "BUNDLE_BACKEND_DIR=%FLUTTER_BUNDLE_DIR%\assets\backend"
 
 if not exist "%BUNDLE_BACKEND_DIR%" mkdir "%BUNDLE_BACKEND_DIR%"
 copy /Y "%BUILD_DIR%\backend_dist\backend_server.exe" "%BUNDLE_BACKEND_DIR%\"
 xcopy /E /I /Y "%BACKEND_DIR%\migrations\*" "%BUNDLE_BACKEND_DIR%\migrations\"
 
 if exist "%POSTGRES_DIR%\bin" (
-    set "BUNDLE_POSTGRES_DIR=%FLUTTER_BUNDLE_DIR%\postgres"
+    set "BUNDLE_POSTGRES_DIR=%FLUTTER_BUNDLE_DIR%\assets\postgres"
     if not exist "!BUNDLE_POSTGRES_DIR!" mkdir "!BUNDLE_POSTGRES_DIR!"
     xcopy /E /I /Y "%POSTGRES_DIR%\*" "!BUNDLE_POSTGRES_DIR!\"
 )

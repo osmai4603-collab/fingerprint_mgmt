@@ -148,52 +148,54 @@ class _DashboardShellState extends State<DashboardShell> {
           Expanded(
             child: Padding(
               padding: EdgeInsets.all(8.0),
-              child: Column(
-                spacing: 1,
-                children: [
-                  _buildNavItem(
-                    0,
-                    AppLocalizations.of(context)!.home,
-                    Icons.home_outlined,
-                    Icons.home_rounded,
-                  ),
-                  _buildNavItem(
-                    1,
-                    AppLocalizations.of(context)!.employees,
-                    Icons.people_outline,
-                    Icons.people_rounded,
-                  ),
-                  _buildNavItem(
-                    2,
-                    AppLocalizations.of(context)!.attendance,
-                    Icons.access_time_outlined,
-                    Icons.access_time_rounded,
-                  ),
-                  _buildNavItem(
-                    3,
-                    AppLocalizations.of(context)!.reports,
-                    Icons.bar_chart_outlined,
-                    Icons.bar_chart_rounded,
-                  ),
-                  _buildNavItem(
-                    4,
-                    AppLocalizations.of(context)!.settings,
-                    Icons.settings_outlined,
-                    Icons.settings_rounded,
-                  ),
-                  _buildNavItem(
-                    5,
-                    AppLocalizations.of(context)!.system,
-                    Icons.tune_outlined,
-                    Icons.tune_rounded,
-                  ),
-                  _buildNavItem(
-                    6,
-                    AppLocalizations.of(context)!.usersManagement,
-                    Icons.contact_page_outlined,
-                    Icons.contact_page_rounded,
-                  ),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  spacing: 1,
+                  children: [
+                    _buildNavItem(
+                      0,
+                      AppLocalizations.of(context)!.home,
+                      Icons.home_outlined,
+                      Icons.home_rounded,
+                    ),
+                    _buildNavItem(
+                      1,
+                      AppLocalizations.of(context)!.employees,
+                      Icons.people_outline,
+                      Icons.people_rounded,
+                    ),
+                    _buildNavItem(
+                      2,
+                      AppLocalizations.of(context)!.attendance,
+                      Icons.access_time_outlined,
+                      Icons.access_time_rounded,
+                    ),
+                    _buildNavItem(
+                      3,
+                      AppLocalizations.of(context)!.reports,
+                      Icons.bar_chart_outlined,
+                      Icons.bar_chart_rounded,
+                    ),
+                    _buildNavItem(
+                      4,
+                      AppLocalizations.of(context)!.settings,
+                      Icons.settings_outlined,
+                      Icons.settings_rounded,
+                    ),
+                    _buildNavItem(
+                      5,
+                      AppLocalizations.of(context)!.system,
+                      Icons.tune_outlined,
+                      Icons.tune_rounded,
+                    ),
+                    _buildNavItem(
+                      6,
+                      AppLocalizations.of(context)!.usersManagement,
+                      Icons.contact_page_outlined,
+                      Icons.contact_page_rounded,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

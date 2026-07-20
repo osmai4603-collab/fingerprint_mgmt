@@ -18,10 +18,7 @@ enum BackendStatus {
   stopped,
 }
 
-enum BackendComponent {
-  postgres,
-  backend,
-}
+enum BackendComponent { postgres, backend }
 
 class BackendInitProgress {
   final BackendStatus status;
@@ -81,20 +78,29 @@ class BackendManager {
     return File(backendExePath!).existsSync();
   }
 
-  void _emitProgress(BackendStatus status, String message,
-      {double progress = 0.0, String? error}) {
+  void _emitProgress(
+    BackendStatus status,
+    String message, {
+    double progress = 0.0,
+    String? error,
+  }) {
     _status = status;
-    _progressController.add(BackendInitProgress(
-      status: status,
-      message: message,
-      progress: progress,
-      error: error,
-    ));
+    _progressController.add(
+      BackendInitProgress(
+        status: status,
+        message: message,
+        progress: progress,
+        error: error,
+      ),
+    );
   }
 
   Future<void> initialize() async {
-    _emitProgress(BackendStatus.checkingFiles, 'التحقق من ملفات التطبيق...',
-        progress: 0.05);
+    _emitProgress(
+      BackendStatus.checkingFiles,
+      'التحقق من ملفات التطبيق...',
+      progress: 0.05,
+    );
 
     await _resolvePaths();
 
@@ -102,9 +108,11 @@ class BackendManager {
       await _startPostgres();
       await _startBackend();
     } else {
-      _emitProgress(BackendStatus.ready,
-          'وضع التطوير - سيتم الاتصال بالخادم الخارجي',
-          progress: 1.0);
+      _emitProgress(
+        BackendStatus.ready,
+        'وضع التطوير - سيتم الاتصال بالخادم الخارجي',
+        progress: 1.0,
+      );
     }
   }
 
@@ -124,7 +132,8 @@ class BackendManager {
       userDataDir = path.join(home, '.local', 'share', appName);
     } else if (Platform.isWindows) {
       final appData =
-          Platform.environment['APPDATA'] ?? 'C:\\Users\\Default\\AppData\\Roaming';
+          Platform.environment['APPDATA'] ??
+          'C:\\Users\\Default\\AppData\\Roaming';
       userDataDir = path.join(appData, appName);
     } else {
       userDataDir = path.join('/tmp', appName);
@@ -135,7 +144,7 @@ class BackendManager {
     pgLogFile = path.join(pgLogDir, 'postgres.log');
     backendLogFile = path.join(userDataDir, 'backend.log');
 
-    final backendDir = path.join(bundleDir, 'backend');
+    final backendDir = path.join(bundleDir, 'assets', 'backend');
 
     if (Platform.isWindows) {
       backendExePath = path.join(backendDir, 'backend_server.exe');
@@ -145,7 +154,7 @@ class BackendManager {
 
     migrationsDir = path.join(backendDir, 'migrations');
 
-    final pgBase = path.join(bundleDir, 'postgres');
+    final pgBase = path.join(bundleDir, 'assets', 'postgres');
     final pgBinDir = path.join(pgBase, 'bin');
     if (Directory(pgBinDir).existsSync()) {
       postgresBinDir = pgBinDir;
@@ -155,13 +164,18 @@ class BackendManager {
   }
 
   Future<void> _startPostgres() async {
-    _emitProgress(BackendStatus.startingPostgres, 'جاري تشغيل قاعدة البيانات...',
-        progress: 0.15);
+    _emitProgress(
+      BackendStatus.startingPostgres,
+      'جاري تشغيل قاعدة البيانات...',
+      progress: 0.15,
+    );
 
     if (postgresBinDir == null) {
-      _emitProgress(BackendStatus.postgresReady,
-          'لم يتم العثور على PostgreSQL المضمن',
-          progress: 0.3);
+      _emitProgress(
+        BackendStatus.postgresReady,
+        'لم يتم العثور على PostgreSQL المضمن',
+        progress: 0.3,
+      );
       return;
     }
 
@@ -171,14 +185,18 @@ class BackendManager {
     final pgCtl = path.join(postgresBinDir!, 'pg_ctl');
     final initdb = path.join(postgresBinDir!, 'initdb');
 
-    if (!Directory(pgDataDir).listSync().any((e) =>
-        e is File && e.path.endsWith('postgresql.conf'))) {
+    if (!Directory(
+      pgDataDir,
+    ).listSync().any((e) => e is File && e.path.endsWith('postgresql.conf'))) {
       _emitProgress(
-          BackendStatus.startingPostgres, 'جاري تهيئة قاعدة البيانات لأول مرة...',
-          progress: 0.2);
+        BackendStatus.startingPostgres,
+        'جاري تهيئة قاعدة البيانات لأول مرة...',
+        progress: 0.2,
+      );
 
       final initResult = await Process.run(initdb, [
-        '-D', pgDataDir,
+        '-D',
+        pgDataDir,
         '--auth-host=trust',
         '--auth-local=trust',
         '--username=postgres',
@@ -186,22 +204,31 @@ class BackendManager {
       ]);
 
       if (initResult.exitCode != 0) {
-        _emitProgress(BackendStatus.error,
-            'فشل تهيئة قاعدة البيانات: ${initResult.stderr}',
-            progress: 0, error: initResult.stderr.toString());
+        _emitProgress(
+          BackendStatus.error,
+          'فشل تهيئة قاعدة البيانات: ${initResult.stderr}',
+          progress: 0,
+          error: initResult.stderr.toString(),
+        );
         return;
       }
     }
 
-    _emitProgress(BackendStatus.startingPostgres, 'جاري بدء تشغيل PostgreSQL...',
-        progress: 0.3);
+    _emitProgress(
+      BackendStatus.startingPostgres,
+      'جاري بدء تشغيل PostgreSQL...',
+      progress: 0.3,
+    );
 
     _postgresProcess = await Process.start(pgCtl, [
       'start',
-      '-D', pgDataDir,
-      '-l', pgLogFile,
+      '-D',
+      pgDataDir,
+      '-l',
+      pgLogFile,
       '-w',
-      '-o', '-p $_pgPort',
+      '-o',
+      '-p $_pgPort',
     ]);
 
     _postgresProcess!.stderr
@@ -223,8 +250,10 @@ class BackendManager {
       try {
         final pgIsready = path.join(postgresBinDir!, 'pg_isready');
         final result = await Process.run(pgIsready, [
-          '-h', 'localhost',
-          '-p', '$_pgPort',
+          '-h',
+          'localhost',
+          '-p',
+          '$_pgPort',
         ]);
         if (result.exitCode == 0) {
           ready = true;
@@ -254,8 +283,11 @@ class BackendManager {
       return;
     }
 
-    _emitProgress(BackendStatus.postgresReady, 'قاعدة البيانات جاهزة',
-        progress: 0.5);
+    _emitProgress(
+      BackendStatus.postgresReady,
+      'قاعدة البيانات جاهزة',
+      progress: 0.5,
+    );
 
     await _createDatabaseIfNeeded();
   }
@@ -267,18 +299,23 @@ class BackendManager {
   }
 
   Future<void> _createDatabaseIfNeeded() async {
-    _emitProgress(BackendStatus.creatingDatabase,
-        'جاري التحقق من وجود قاعدة البيانات...',
-        progress: 0.55);
+    _emitProgress(
+      BackendStatus.creatingDatabase,
+      'جاري التحقق من وجود قاعدة البيانات...',
+      progress: 0.55,
+    );
 
     if (postgresBinDir == null) return;
 
     final createdb = path.join(postgresBinDir!, 'createdb');
 
     final result = await Process.run(createdb, [
-      '-h', 'localhost',
-      '-p', '$_pgPort',
-      '-U', 'postgres',
+      '-h',
+      'localhost',
+      '-p',
+      '$_pgPort',
+      '-U',
+      'postgres',
       'fingerprint_db',
     ]);
 
@@ -291,18 +328,26 @@ class BackendManager {
       }
     }
 
-    _emitProgress(BackendStatus.postgresReady, 'قاعدة البيانات جاهزة',
-        progress: 0.6);
+    _emitProgress(
+      BackendStatus.postgresReady,
+      'قاعدة البيانات جاهزة',
+      progress: 0.6,
+    );
   }
 
   Future<void> _startBackend() async {
-    _emitProgress(BackendStatus.startingBackend, 'جاري تشغيل الخادم...',
-        progress: 0.65);
+    _emitProgress(
+      BackendStatus.startingBackend,
+      'جاري تشغيل الخادم...',
+      progress: 0.65,
+    );
 
     if (backendExePath == null || !File(backendExePath!).existsSync()) {
-      _emitProgress(BackendStatus.backendReady,
-          'لم يتم العثور على ملف الخادم',
-          progress: 0.7);
+      _emitProgress(
+        BackendStatus.backendReady,
+        'لم يتم العثور على ملف الخادم',
+        progress: 0.7,
+      );
       return;
     }
 
@@ -313,7 +358,8 @@ class BackendManager {
       'DB_NAME': 'fingerprint_db',
       'DB_USER': 'postgres',
       'DB_PASSWORD': 'postgres',
-      'JWT_SECRET': 'standalone-jwt-secret-${DateTime.now().millisecondsSinceEpoch}',
+      'JWT_SECRET':
+          'standalone-jwt-secret-${DateTime.now().millisecondsSinceEpoch}',
       'JWT_EXPIRY_HOURS': '24',
       'JWT_REFRESH_EXPIRY_DAYS': '30',
       'BACKEND_PORT': backendPort.toString(),
@@ -331,23 +377,43 @@ class BackendManager {
       environment: env,
     );
 
-    _backendProcess!.stdout
-        .transform(utf8.decoder)
-        .listen((data) {
+    _backendProcess!.stdout.transform(utf8.decoder).listen((data) {
       logSink.write(data);
       debugPrint('[backend stdout] $data');
     });
 
-    _backendProcess!.stderr
-        .transform(utf8.decoder)
-        .listen((data) {
+    _backendProcess!.stderr.transform(utf8.decoder).listen((data) {
       logSink.write(data);
       debugPrint('[backend stderr] $data');
     });
 
-    _backendProcess!.exitCode.then((code) {
+    bool isBackendDead = false;
+
+    _backendProcess!.exitCode.then((code) async {
       logSink.close();
       debugPrint('[backend] exited with code $code');
+      if (code != 0 && code != -1) {
+        isBackendDead = true;
+        String errorDetails = 'Unknown error';
+        try {
+          final logContent = await File(backendLogFile).readAsString();
+          final lines = logContent.split('\n');
+          final lastLines = lines.length > 20
+              ? lines.sublist(lines.length - 20)
+              : lines;
+          errorDetails = lastLines.join('\n').trim();
+        } catch (e) {
+          errorDetails = 'Could not read backend log: $e';
+        }
+        _emitProgress(
+          BackendStatus.error,
+          'انهار الخادم بشكل غير متوقع (Code: $code)',
+          progress: 0,
+          error: errorDetails.isEmpty
+              ? 'No error output found in backend.log'
+              : errorDetails,
+        );
+      }
     });
 
     // Backend started
@@ -356,43 +422,51 @@ class BackendManager {
     final deadline = DateTime.now().add(startupTimeout);
     final client = HttpClient();
 
-    while (!ready && DateTime.now().isBefore(deadline)) {
+    while (!ready && !isBackendDead && DateTime.now().isBefore(deadline)) {
       try {
-        final request = await client
-            .getUrl(Uri.parse('http://127.0.0.1:$backendPort/health'));
+        final request = await client.getUrl(
+          Uri.parse('http://127.0.0.1:$backendPort/health'),
+        );
         final response = await request.close();
         if (response.statusCode == 200) {
           ready = true;
         }
       } catch (_) {}
 
-      if (!ready) {
+      if (!ready && !isBackendDead) {
         await Future.delayed(healthCheckInterval);
       }
 
-      final elapsed = deadline.difference(DateTime.now()).inMilliseconds;
-      final total = startupTimeout.inMilliseconds;
-      _emitProgress(
-        BackendStatus.startingBackend,
-        'جاري تشغيل الخادم...',
-        progress: 0.65 + (0.3 * (1 - elapsed / total)),
-      );
+      if (!isBackendDead) {
+        final elapsed = deadline.difference(DateTime.now()).inMilliseconds;
+        final total = startupTimeout.inMilliseconds;
+        _emitProgress(
+          BackendStatus.startingBackend,
+          'جاري تشغيل الخادم...',
+          progress: 0.65 + (0.3 * (1 - elapsed / total)),
+        );
+      }
     }
 
     client.close(force: true);
+
+    if (isBackendDead) {
+      // The exitCode future already emitted the error, so we just return.
+      return;
+    }
 
     if (!ready) {
       _emitProgress(
         BackendStatus.error,
         'فشل تشغيل الخادم - انتهت المهلة',
         progress: 0,
-        error: 'Timeout waiting for backend on port $backendPort',
+        error:
+            'Timeout waiting for backend on port $backendPort. Check backend.log for more details.',
       );
       return;
     }
 
-    _emitProgress(
-        BackendStatus.ready, 'التطبيق جاهز للاستخدام', progress: 1.0);
+    _emitProgress(BackendStatus.ready, 'التطبيق جاهز للاستخدام', progress: 1.0);
   }
 
   Future<void> _stopBackend() async {
@@ -412,11 +486,7 @@ class BackendManager {
     if (postgresBinDir != null && Directory(pgDataDir).existsSync()) {
       final pgCtl = path.join(postgresBinDir!, 'pg_ctl');
       try {
-        await Process.run(pgCtl, [
-          'stop',
-          '-D', pgDataDir,
-          '-m', 'fast',
-        ]);
+        await Process.run(pgCtl, ['stop', '-D', pgDataDir, '-m', 'fast']);
       } catch (_) {}
     }
 
@@ -437,10 +507,12 @@ class BackendManager {
       final client = HttpClient();
       client
           .getUrl(Uri.parse('http://127.0.0.1:$backendPort/health'))
-          .then((req) => req.close().then((resp) {
-                client.close();
-                return resp.statusCode == 200;
-              }));
+          .then(
+            (req) => req.close().then((resp) {
+              client.close();
+              return resp.statusCode == 200;
+            }),
+          );
       return true;
     } catch (_) {
       return false;

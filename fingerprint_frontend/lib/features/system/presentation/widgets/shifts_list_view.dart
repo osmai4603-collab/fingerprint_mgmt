@@ -1,5 +1,6 @@
 import 'package:fingerprint_frontend/core/localization/l10n/app_localizations.dart';
 import 'package:fingerprint_frontend/core/services/date_time_format.dart';
+import 'package:fingerprint_frontend/core/widgets/dialogs/confirm_delete_dialog.dart';
 import 'package:fingerprint_frontend/core/widgets/icon_button_widget.dart';
 import 'package:fingerprint_frontend/core/widgets/shimmer_loading.dart';
 import 'package:flutter/material.dart';
@@ -58,33 +59,22 @@ class _ShiftsListViewState extends State<ShiftsListView> {
     }
   }
 
-  void _confirmDelete(ShiftEntity shift) {
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(AppLocalizations.of(context)!.confirmDelete),
-        content: Text(
-          AppLocalizations.of(context)!.confirmDeleteShift(shift.name),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(ctx).pop(),
-            child: Text(AppLocalizations.of(context)!.cancel),
+  void _confirmDelete(ShiftEntity shift) async {
+    final bloc = context.read<ShiftsBloc>();
+    final result =
+        await showDialog<bool>(
+          context: context,
+          builder: (ctx) => ConfirmDeleteDialog(
+            title: AppLocalizations.of(context)!.confirmDelete,
+            content: AppLocalizations.of(
+              context,
+            )!.confirmDeleteShift(shift.name),
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(ctx).pop();
-              context.read<ShiftsBloc>().add(DeleteShiftEvent(id: shift.id));
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.error,
-              foregroundColor: Theme.of(context).colorScheme.onError,
-            ),
-            child: Text(AppLocalizations.of(context)!.delete),
-          ),
-        ],
-      ),
-    );
+        ) ??
+        false;
+    if (result && context.mounted) {
+      bloc.add(DeleteShiftEvent(id: shift.id));
+    }
   }
 
   @override

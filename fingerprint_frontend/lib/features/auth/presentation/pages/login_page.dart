@@ -7,6 +7,8 @@ import '../bloc/auth_bloc.dart';
 import '../bloc/auth_event.dart';
 import '../bloc/auth_state.dart';
 import '../../../../core/constants/app_route_keys.dart';
+import '../../../../core/di/injection_container.dart' as di;
+import '../../../../core/services/backend_manager.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -91,6 +93,14 @@ class _LoginPageState extends State<LoginPage>
           children: [
             // Animated Background
             const _AnimatedBackground(),
+
+            // Status Indicator
+            Positioned(
+              bottom: 24,
+              left: 0,
+              right: 0,
+              child: Center(child: const _BackendStatusIndicator()),
+            ),
 
             // Content
             Center(
@@ -181,7 +191,9 @@ class _LoginPageState extends State<LoginPage>
                                     ),
                                     SizedBox(height: 24),
                                     Text(
-                                      AppLocalizations.of(context)!.fingerprintSystem,
+                                      AppLocalizations.of(
+                                        context,
+                                      )!.fingerprintSystem,
                                       style: Theme.of(context)
                                           .textTheme
                                           .headlineSmall
@@ -195,7 +207,9 @@ class _LoginPageState extends State<LoginPage>
                                     ),
                                     SizedBox(height: 8),
                                     Text(
-                                      AppLocalizations.of(context)!.loginToContinue,
+                                      AppLocalizations.of(
+                                        context,
+                                      )!.loginToContinue,
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyMedium
@@ -211,12 +225,16 @@ class _LoginPageState extends State<LoginPage>
                                     // Username field
                                     _buildTextField(
                                       controller: _usernameController,
-                                      label: AppLocalizations.of(context)!.username,
+                                      label: AppLocalizations.of(
+                                        context,
+                                      )!.username,
                                       icon: Icons.person_outline_rounded,
                                       textInputAction: TextInputAction.next,
                                       validator: (value) =>
                                           value?.trim().isEmpty ?? true
-                                          ? AppLocalizations.of(context)!.usernameRequired
+                                          ? AppLocalizations.of(
+                                              context,
+                                            )!.usernameRequired
                                           : null,
                                     ),
                                     SizedBox(height: 20),
@@ -224,7 +242,9 @@ class _LoginPageState extends State<LoginPage>
                                     // Password field
                                     _buildTextField(
                                       controller: _passwordController,
-                                      label: AppLocalizations.of(context)!.password,
+                                      label: AppLocalizations.of(
+                                        context,
+                                      )!.password,
                                       icon: Icons.lock_outline_rounded,
                                       textInputAction: TextInputAction.send,
                                       obscureText: _obscurePassword,
@@ -245,7 +265,9 @@ class _LoginPageState extends State<LoginPage>
                                       ),
                                       validator: (value) =>
                                           value?.isEmpty ?? true
-                                          ? AppLocalizations.of(context)!.passwordRequired
+                                          ? AppLocalizations.of(
+                                              context,
+                                            )!.passwordRequired
                                           : null,
                                     ),
                                     SizedBox(height: 40),
@@ -311,7 +333,9 @@ class _LoginPageState extends State<LoginPage>
                                                         ),
                                                   )
                                                 : Text(
-                                                    AppLocalizations.of(context)!.login,
+                                                    AppLocalizations.of(
+                                                      context,
+                                                    )!.login,
                                                     style: TextStyle(
                                                       fontSize: 18,
                                                       fontWeight:
@@ -408,6 +432,161 @@ class _LoginPageState extends State<LoginPage>
         ),
         contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       ),
+    );
+  }
+}
+
+class _BackendStatusIndicator extends StatefulWidget {
+  const _BackendStatusIndicator();
+
+  @override
+  State<_BackendStatusIndicator> createState() =>
+      _BackendStatusIndicatorState();
+}
+
+class _BackendStatusIndicatorState extends State<_BackendStatusIndicator> {
+  late final BackendManager _backendManager;
+  late BackendStatus _status;
+
+  @override
+  void initState() {
+    super.initState();
+    _backendManager = di.get_it<BackendManager>();
+    _status = _backendManager.status;
+  }
+
+  void _showErrorDialog(BuildContext context, String? errorDetails) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Row(
+          children: [
+            Icon(Icons.warning_amber_rounded, color: Colors.red),
+            SizedBox(width: 8),
+            Text('تفاصيل الخطأ'),
+          ],
+        ),
+        content: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'حدث خطأ أثناء تشغيل خادم الواجهة الخلفية:',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 12),
+              Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: SelectableText(
+                  errorDetails ?? 'لم يتم توفر تفاصيل للخطأ.',
+                  textDirection: TextDirection.ltr,
+                  style: TextStyle(
+                    fontFamily: 'monospace',
+                    fontSize: 12,
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text('إغلاق'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<BackendInitProgress>(
+      stream: _backendManager.progressStream,
+      initialData: BackendInitProgress(status: _status, message: ''),
+      builder: (context, snapshot) {
+        final status = snapshot.data?.status ?? _status;
+        final error = snapshot.data?.error;
+
+        Color statusColor;
+        String statusText;
+        IconData statusIcon;
+
+        switch (status) {
+          case BackendStatus.ready:
+          case BackendStatus.backendReady:
+            statusColor = Colors.green;
+            statusText = 'الخادم متصل';
+            statusIcon = Icons.cloud_done_rounded;
+            break;
+          case BackendStatus.error:
+          case BackendStatus.stopped:
+            statusColor = Colors.red;
+            statusText = 'الخادم غير متصل';
+            statusIcon = Icons.cloud_off_rounded;
+            break;
+          default:
+            statusColor = Colors.orange;
+            statusText = 'جاري الاتصال...';
+            statusIcon = Icons.cloud_sync_rounded;
+        }
+
+        Widget indicator = Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor.withValues(alpha: 0.8),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: statusColor.withValues(alpha: 0.5),
+              width: 1,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: statusColor.withValues(alpha: 0.2),
+                blurRadius: 8,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(statusIcon, size: 16, color: statusColor),
+              const SizedBox(width: 6),
+              Text(
+                statusText,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: statusColor,
+                ),
+              ),
+              if (status == BackendStatus.error && error != null) ...[
+                const SizedBox(width: 4),
+                Icon(Icons.info_outline_rounded, size: 14, color: statusColor),
+              ],
+            ],
+          ),
+        );
+
+        if (status == BackendStatus.error && error != null) {
+          return MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () => _showErrorDialog(context, error),
+              child: indicator,
+            ),
+          );
+        }
+
+        return indicator;
+      },
     );
   }
 }

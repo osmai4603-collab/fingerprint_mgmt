@@ -5,7 +5,7 @@ import '../services/user_session.dart';
 class ApiClient {
   final Dio _dio;
   final UserSession _userSession;
-  final String _baseUrl = 'http://localhost:8000';
+  final String _baseUrl = 'http://127.0.0.1:8000';
 
   ApiClient(this._dio, this._userSession) {
     _dio.options.baseUrl = _baseUrl;
