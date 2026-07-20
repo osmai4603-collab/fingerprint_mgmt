@@ -1,6 +1,6 @@
 # تقرير اختبار ZktecoK40Controller
 
-**التاريخ:** 2026-07-12 16:45:57
+**التاريخ:** 2026-07-20 03:16:01
 
 **المنهجية المتبعة:** مأخوذة من مشروع fingerprint_python (DeviceManager pattern)
 
@@ -20,21 +20,21 @@
 
 | الحالة | العدد |
 |--------|-------|
-| ✓ نجاح (PASS) | 21 |
-| ✗ فشل (FAIL) | 11 |
+| ✓ نجاح (PASS) | 16 |
+| ✗ فشل (FAIL) | 16 |
 | **الإجمالي** | **32** |
 
 ## تفاصيل النتائج
 
 | # | المجموعة | العملية | الحالة | التفاصيل |
 |---|----------|---------|--------|----------|
-| 1 | Connection & Device State | `connect` | ✓ PASS | returned True |
-| 2 | Connection & Device State | `is_connected` | ✓ PASS | is_connected=True |
+| 1 | Connection & Device State | `connect` | ✗ FAIL | returned False |
+| 2 | Connection & Device State | `is_connected` | ✓ PASS | is_connected=False |
 | 3 | Connection & Device State | `disconnect` | ✓ PASS | returned True |
-| 4 | Connection & Device State | `connect (re-connect)` | ✓ PASS | returned True |
-| 5 | Connection & Device State | `disable_device` | ✓ PASS | returned True |
-| 6 | Connection & Device State | `enable_device` | ✓ PASS | returned True |
-| 7 | Connection & Device State | `restart` | ✓ PASS | returned True |
+| 4 | Connection & Device State | `connect (re-connect)` | ✗ FAIL | returned False |
+| 5 | Connection & Device State | `disable_device` | ✗ FAIL | returned False |
+| 6 | Connection & Device State | `enable_device` | ✗ FAIL | returned False |
+| 7 | Connection & Device State | `restart` | ✗ FAIL | returned False |
 | 8 | Connection & Device State | `poweroff` | ✗ FAIL | returned False |
 | 9 | Attendance Management | `get_attendance` | ✓ PASS | returned 0 records |
 | 10 | Attendance Management | `clear_attendance` | ✗ FAIL | returned False |
@@ -53,7 +53,7 @@
 | 23 | Device Info & Settings | `get_firmware_version` | ✓ PASS | firmware='' |
 | 24 | Device Info & Settings | `get_pin_width` | ✓ PASS | pin_width=0 |
 | 25 | Device Info & Settings | `get_network_params` | ✓ PASS | network_params={'ip': '', 'mask': '', 'gateway': ''} |
-| 26 | Device Info & Settings | `get_time` | ✓ PASS | device_time=2026-07-12 16:45:57.689606 |
+| 26 | Device Info & Settings | `get_time` | ✓ PASS | device_time=2026-07-20 03:16:01.838010 |
 | 27 | Device Info & Settings | `set_time` | ✗ FAIL | returned False |
 | 28 | Device Info & Settings | `read_sizes` | ✓ PASS | sizes={} |
 | 29 | Live Control | `unlock` | ✗ FAIL | returned False |

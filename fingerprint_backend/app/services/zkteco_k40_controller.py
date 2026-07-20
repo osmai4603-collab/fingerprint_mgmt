@@ -195,7 +195,7 @@ class ZktecoK40Controller(BiometricDeviceController):
                     size=t.size,
                     valid=t.valid,
                     template=t.template,
-                    mark=t.mark
+                    mark=t.fid
                 )
                 for t in templates
             ]
@@ -213,7 +213,7 @@ class ZktecoK40Controller(BiometricDeviceController):
                     size=t.size,
                     valid=t.valid,
                     template=t.template,
-                    mark=t.mark
+                    mark=t.fid
                 )
             return None
         except Exception:
